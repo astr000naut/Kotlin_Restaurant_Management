@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="4dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:background="#9FCFA7">
+        <TextView
+            android:id="@+id/tv_dish_name"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:text="Mực trứng hấp bia"
+            android:textSize="22sp"
+            android:padding="8dp"/>
+
+
+        <EditText
+            android:id="@+id/ghi_chu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="Ghi chú" />
+
+
+        <Button
+            android:id="@+id/btn_tru"
+            android:layout_width="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/tv_soluong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:text="0"
+            android:textSize="22sp"/>
+
+        <Button
+            android:id="@+id/btn_cong"
+            android:layout_width="50dp"
+            android:layout_marginLeft="25dp"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+          android:text="+" />
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

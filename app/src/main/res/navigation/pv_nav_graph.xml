@@ -11,9 +11,6 @@
         android:label="pv_fragment_bill_info"
         tools:layout="@layout/pv_fragment_bill_info" >
         <argument
-            android:name="table_id"
-            app:argType="integer" />
-        <argument
             android:name="bill_id"
             app:argType="integer" />
         <action
@@ -66,5 +63,8 @@
         tools:layout="@layout/pv_fragment_themmon" >
         <argument android:name="bill_id"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_themmonFragment_to_billInfoFragment"
+            app:destination="@id/billInfoFragment" />
     </fragment>
 </navigation>

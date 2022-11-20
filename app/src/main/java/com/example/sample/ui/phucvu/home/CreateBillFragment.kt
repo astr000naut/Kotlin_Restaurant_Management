@@ -52,8 +52,7 @@ class CreateBillFragment : Fragment() {
                     response: Response<BillResponse>
                 ) {
                     if (response.body()?.status.toString() == "success") {
-                        val billId = response.body()?.bill?.id
-                        val action = CreateBillFragmentDirections.actionCreateBillFragment2ToBillInfoFragment(tableId, billId!!)
+                        val action = CreateBillFragmentDirections.actionCreateBillFragment2ToBillInfoFragment(tableId)
                         binding.root.findNavController().navigate(action)
                     } else {
                         Toast.makeText(context, response.body()?.message.toString(), Toast.LENGTH_SHORT).show()

@@ -59,7 +59,7 @@
             android:textSize="22sp"/>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/themmon_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -67,12 +67,13 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bill_info_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="#757373"
-        android:layout_margin="10dp">
-
+        android:layout_margin="10dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
     </androidx.recyclerview.widget.RecyclerView>
 
     <TextView
