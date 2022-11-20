@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pv_nav_graph"
+    app:startDestination="@id/tableListFragment">
+
+    <fragment
+        android:id="@+id/billInfoFragment"
+        android:name="com.example.sample.ui.phucvu.home.BillInfoFragment"
+        android:label="pv_fragment_bill_info"
+        tools:layout="@layout/pv_fragment_bill_info" >
+        <argument
+            android:name="table_id"
+            app:argType="integer" />
+        <argument
+            android:name="bill_id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_billInfoFragment_to_themmonFragment"
+            app:destination="@id/themmonFragment" />
+        <action
+            android:id="@+id/action_billInfoFragment_to_capnhatmonFragment"
+            app:destination="@id/capnhatmonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createBillFragment2"
+        android:name="com.example.sample.ui.phucvu.home.CreateBillFragment"
+        android:label="pv_fragment_create_bill"
+        tools:layout="@layout/pv_fragment_create_bill" >
+        <action
+            android:id="@+id/action_createBillFragment2_to_billInfoFragment"
+            app:destination="@id/billInfoFragment" />
+        <argument
+            android:name="table_id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/tableListFragment"
+        android:name="com.example.sample.ui.phucvu.home.TableListFragment"
+        android:label="pv_fragment_table_list"
+        tools:layout="@layout/pv_fragment_table_list" >
+        <action
+            android:id="@+id/action_tableListFragment_to_createBillFragment2"
+            app:destination="@id/createBillFragment2" />
+        <action
+            android:id="@+id/action_tableListFragment_to_billInfoFragment"
+            app:destination="@id/billInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/capnhatmonFragment"
+        android:name="com.example.sample.ui.phucvu.home.CapnhatmonFragment"
+        android:label="pv_fragment_capnhatmon"
+        tools:layout="@layout/pv_fragment_capnhatmon" >
+        <argument
+            android:name="bill_id"
+            app:argType="integer" />
+        <argument
+            android:name="mon_id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/themmonFragment"
+        android:name="com.example.sample.ui.phucvu.home.ThemmonFragment"
+        android:label="pv_fragment_themmon"
+        tools:layout="@layout/pv_fragment_themmon" >
+        <argument android:name="bill_id"
+            app:argType="integer" />
+    </fragment>
+</navigation>
