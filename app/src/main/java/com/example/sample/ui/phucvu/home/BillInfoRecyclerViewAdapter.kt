@@ -39,9 +39,9 @@ class BillInfoRecyclerViewAdapter : ListAdapter<Dish, BillInfoRecyclerViewAdapte
         }
         fun bind(item: Dish) {
             tv_tenmon.text = item.ten
-            tv_ghichu.text = item.ghichu
-            tv_soluong.text = item.soluong.toString()
-            tv_gia.text = item.gia.toString()
+            tv_ghichu.text = "Ghi chú: " + item.ghichu
+            tv_soluong.text = "SL: " + item.soluong.toString()
+            tv_gia.text = "Giá: " + item.gia.toString()
         }
     }
 
