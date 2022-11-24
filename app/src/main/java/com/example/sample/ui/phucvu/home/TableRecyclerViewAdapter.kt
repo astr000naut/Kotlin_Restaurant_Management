@@ -51,7 +51,7 @@ class TableRecyclerViewAdapter : ListAdapter<Table, TableRecyclerViewAdapter.Tab
                     val action1 = TableListFragmentDirections.actionTableListFragmentToCreateBillFragment2(item.id)
                     rootView.findNavController().navigate(action1)
                 } else {
-                    val action2 = TableListFragmentDirections.actionTableListFragmentToBillInfoFragment(item.hoadonht!!)
+                    val action2 = TableListFragmentDirections.actionTableListFragmentToBillInfoFragment(item.hoadonht!!, item.id)
                     rootView.findNavController().navigate(action2)
                 }
 

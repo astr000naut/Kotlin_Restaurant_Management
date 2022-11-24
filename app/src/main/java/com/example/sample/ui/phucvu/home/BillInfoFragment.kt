@@ -30,8 +30,9 @@ class BillInfoFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = PvFragmentBillInfoBinding.inflate(inflater, container, false)
         val billId = BillInfoFragmentArgs.fromBundle(requireArguments()).billId
+        val tableId = BillInfoFragmentArgs.fromBundle(requireArguments()).tableId
         binding.themmonBtn.setOnClickListener {
-            val action = BillInfoFragmentDirections.actionBillInfoFragmentToThemmonFragment(billId)
+            val action = BillInfoFragmentDirections.actionBillInfoFragmentToThemmonFragment(billId, tableId)
             binding.root.findNavController().navigate(action)
         }
 

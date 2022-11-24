@@ -5,11 +5,11 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/pv_nav_home"
+            android:id="@+id/bp_nav_home"
             android:icon="@drawable/home"
             android:title="Trang chủ" />
         <item
-            android:id="@+id/pv_nav_setting"
+            android:id="@+id/bp_nav_setting"
             android:icon="@drawable/user"
             android:title="Cập nhật thông tin" />
     </group>

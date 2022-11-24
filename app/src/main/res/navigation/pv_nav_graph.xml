@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_billInfoFragment_to_capnhatmonFragment"
             app:destination="@id/capnhatmonFragment" />
+        <argument
+            android:name="table_id"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/createBillFragment2"
@@ -27,7 +30,8 @@
         tools:layout="@layout/pv_fragment_create_bill" >
         <action
             android:id="@+id/action_createBillFragment2_to_billInfoFragment"
-            app:destination="@id/billInfoFragment" />
+            app:destination="@id/billInfoFragment"
+            app:popUpTo="@id/tableListFragment" />
         <argument
             android:name="table_id"
             app:argType="integer" />
@@ -65,6 +69,10 @@
             app:argType="integer" />
         <action
             android:id="@+id/action_themmonFragment_to_billInfoFragment"
-            app:destination="@id/billInfoFragment" />
+            app:destination="@id/billInfoFragment"
+            app:popUpTo="@id/tableListFragment" />
+        <argument
+            android:name="table_id"
+            app:argType="integer" />
     </fragment>
 </navigation>

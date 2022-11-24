@@ -18,14 +18,20 @@ import com.example.sample.model.GetAllDishResponse
 import com.example.sample.network.BillService
 import com.example.sample.network.DishService
 import com.example.sample.network.RetrofitClient
+import com.example.sample.network.SocketHandler
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import io.socket.client.Socket
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 
 class ThemmonFragment : Fragment() {
     private var _binding: PvFragmentThemmonBinding? = null
     private val binding get() = _binding!!
+    lateinit var mSocket: Socket
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -61,16 +67,26 @@ class ThemmonFragment : Fragment() {
         })
 
         val billService = RetrofitClient.retrofit.create(BillService::class.java)
+        SocketHandler.setSocket()
+        mSocket = SocketHandler.getSocket()
+        mSocket.connect()
+        val gson = Gson()
+        val gsonPretty = GsonBuilder().setPrettyPrinting().create()
+
 
 
         binding.btnThemmon.setOnClickListener {
-            var str: String = ""
             val bill_id = ThemmonFragmentArgs.fromBundle(requireArguments()).billId
+            val table_id = ThemmonFragmentArgs.fromBundle(requireArguments()).tableId
             val dish_add_list = mutableListOf<Dish>()
             adapter.currentList.forEach{dish ->
-                if(dish.soluong > 0)
+                if(dish.soluong > 0) {
+                    dish.ban = table_id
+                    dish.trangthai = "new"
                     dish_add_list.add(dish)
+                }
             }
+            Log.d("DISHHHH", dish_add_list.toString())
             val addDishRequest = billService.addDish(AddDishRequest(bill_id, dish_add_list))
             if (dish_add_list.size > 0) {
                 addDishRequest.enqueue(object : Callback<BillResponse> {
@@ -79,8 +95,17 @@ class ThemmonFragment : Fragment() {
                         response: Response<BillResponse>
                     ) {
                         Toast.makeText(context, response.body()?.message.toString(), Toast.LENGTH_SHORT).show()
-                        val action = ThemmonFragmentDirections.actionThemmonFragmentToBillInfoFragment(bill_id)
-                        root.findNavController().navigate(action)
+                        mSocket.emit("dish_list_pv", gson.toJson(dish_add_list))
+
+                        val action = ThemmonFragmentDirections.actionThemmonFragmentToBillInfoFragment(bill_id, table_id)
+                        Timer().schedule(object: TimerTask() {
+                            override fun run() {
+                                activity?.runOnUiThread{
+                                    root.findNavController().navigate(action)
+                                }
+                            }
+
+                        }, 1000)
                     }
 
                     override fun onFailure(call: Call<BillResponse>, t: Throwable) {
@@ -97,6 +122,7 @@ class ThemmonFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        mSocket.disconnect()
         _binding = null
     }
 

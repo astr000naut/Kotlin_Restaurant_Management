@@ -39,7 +39,7 @@ class BillInfoRecyclerViewAdapter : ListAdapter<Dish, BillInfoRecyclerViewAdapte
         }
         fun bind(item: Dish) {
             tv_tenmon.text = item.ten
-            tv_ghichu.text = "Ghi chú: " + item.ghichu
+            tv_ghichu.text = "Ghi chú: " + if (item.ghichu != null) item.ghichu else ""
             tv_soluong.text = "SL: " + item.soluong.toString()
             tv_gia.text = "Giá: " + item.gia.toString()
         }

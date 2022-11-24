@@ -10,6 +10,7 @@ import com.example.sample.model.LoginRequest
 import com.example.sample.model.LoginResponse
 import com.example.sample.network.LoginService
 import com.example.sample.network.RetrofitClient
+import com.example.sample.network.SocketHandler
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -78,17 +79,18 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-//        if(SharedPrefManager.getInstance(this).isLoggedIn) {
-//            var intent = Intent(applicationContext, PhucvuActivity::class.java)
-//            val user = SharedPrefManager.getInstance(this).user
-//            when (user.role) {
-//                "phucvu" -> intent = Intent(applicationContext, PhucvuActivity::class.java)
-//                "bep" -> intent = Intent(applicationContext, BepActivity::class.java)
-//                "quanly" -> intent = Intent(applicationContext, QuanlyActivity::class.java)
-//                "thungan" -> intent = Intent(applicationContext, ThunganActivity::class.java)
-//            }
-//            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-//            startActivity(intent)
-//        }
+        SocketHandler.setSocket()
+        if(SharedPrefManager.getInstance(this).isLoggedIn) {
+            var intent = Intent(applicationContext, PhucvuActivity::class.java)
+            val user = SharedPrefManager.getInstance(this).user
+            when (user.role) {
+                "phucvu" -> intent = Intent(applicationContext, PhucvuActivity::class.java)
+                "bep" -> intent = Intent(applicationContext, BepActivity::class.java)
+                "quanly" -> intent = Intent(applicationContext, QuanlyActivity::class.java)
+                "thungan" -> intent = Intent(applicationContext, ThunganActivity::class.java)
+            }
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
     }
 }

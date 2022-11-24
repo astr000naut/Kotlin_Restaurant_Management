@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bp_nav_graph"
+    app:startDestination="@id/DIshListFragment">
+
+    <fragment
+        android:id="@+id/DIshListFragment"
+        android:name="com.example.sample.ui.bep.home.DIshListFragment"
+        android:label="bp_fragment_dish_list"
+        tools:layout="@layout/bp_fragment_dish_list" />
+</navigation>
