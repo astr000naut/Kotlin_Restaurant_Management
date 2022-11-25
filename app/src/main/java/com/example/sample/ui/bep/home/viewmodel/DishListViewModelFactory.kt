@@ -1,9 +1,8 @@
-package com.example.sample.ui.bep.home
+package com.example.sample.ui.bep.home.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.sample.model.database.BpDishDao
-import io.socket.client.Socket
 
 class DishListViewModelFactory(private val dao: BpDishDao) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {

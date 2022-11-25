@@ -1,4 +1,4 @@
-package com.example.sample.ui.bep.home
+package com.example.sample.ui.bep.home.adapter
 
 import android.graphics.Color
 import android.util.Log
@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sample.R
 import com.example.sample.model.BP_Dish
-import io.socket.client.Socket
 
 
 class DishListRecyclerViewAdapter (

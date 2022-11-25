@@ -1,12 +1,11 @@
-package com.example.sample.ui.phucvu.home
+package com.example.sample.ui.phucvu.home.adapter
 
 import androidx.recyclerview.widget.DiffUtil
-import com.example.sample.model.BP_Dish
 import com.example.sample.model.Dish
 
-class DishDiffItemCallback: DiffUtil.ItemCallback<Dish>() {
+class BillInfoDiffItemCallback: DiffUtil.ItemCallback<Dish>() {
     override fun areItemsTheSame(oldItem: Dish, newItem: Dish): Boolean
-    = (oldItem.id == newItem.id && oldItem.ghichu == newItem.ghichu && oldItem.soluong == newItem.soluong)
+    = (oldItem.id == newItem.id)
 
     override fun areContentsTheSame(oldItem: Dish, newItem: Dish): Boolean
     = (oldItem == newItem)

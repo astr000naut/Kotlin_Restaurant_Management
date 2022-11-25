@@ -1,4 +1,6 @@
-package com.example.sample.model
+package com.example.sample.model.apiresponse
+
+import com.example.sample.model.Dish
 
 data class GetAllDishResponse(
     val status: String,

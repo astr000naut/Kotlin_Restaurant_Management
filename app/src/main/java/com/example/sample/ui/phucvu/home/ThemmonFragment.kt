@@ -10,12 +10,16 @@ import android.widget.Toast
 import androidx.navigation.findNavController
 import com.example.sample.databinding.PvFragmentThemmonBinding
 import com.example.sample.model.*
+import com.example.sample.model.apirequest.AddDishRequest
+import com.example.sample.model.apiresponse.BillAddDishResponse
+import com.example.sample.model.apiresponse.GetAllDishResponse
 
 
-import com.example.sample.network.BillService
-import com.example.sample.network.DishService
+import com.example.sample.network.api.BillService
+import com.example.sample.network.api.DishService
 import com.example.sample.network.RetrofitClient
 import com.example.sample.network.SocketHandler
+import com.example.sample.ui.phucvu.home.adapter.ThemmonRecyclerViewAdapter
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import io.socket.client.Socket

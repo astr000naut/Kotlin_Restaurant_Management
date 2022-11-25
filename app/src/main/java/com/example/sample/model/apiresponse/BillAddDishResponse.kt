@@ -1,4 +1,4 @@
-package com.example.sample.model
+package com.example.sample.model.apiresponse
 
 data class BillAddDishResponse(
     val status: String,

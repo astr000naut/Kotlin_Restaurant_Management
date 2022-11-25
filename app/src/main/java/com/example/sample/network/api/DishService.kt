@@ -1,6 +1,6 @@
-package com.example.sample.network
+package com.example.sample.network.api
 
-import com.example.sample.model.GetAllDishResponse
+import com.example.sample.model.apiresponse.GetAllDishResponse
 import retrofit2.Call
 import retrofit2.http.GET
 

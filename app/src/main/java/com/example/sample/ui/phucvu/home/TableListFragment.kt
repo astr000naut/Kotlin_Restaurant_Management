@@ -8,10 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.sample.databinding.PvFragmentTableListBinding
-import com.example.sample.model.GetAllTableResponse
+import com.example.sample.model.apiresponse.GetAllTableResponse
 import com.example.sample.network.RetrofitClient
 import com.example.sample.network.SocketHandler
-import com.example.sample.network.TableService
+import com.example.sample.network.api.TableService
+import com.example.sample.ui.phucvu.home.adapter.TableRecyclerViewAdapter
 import io.socket.client.Socket
 import retrofit2.Call
 import retrofit2.Callback

@@ -3,12 +3,11 @@ package com.example.sample
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import com.example.sample.databinding.LiActivityLoginBinding
-import com.example.sample.model.LoginRequest
-import com.example.sample.model.LoginResponse
-import com.example.sample.network.LoginService
+import com.example.sample.model.apirequest.LoginRequest
+import com.example.sample.model.apiresponse.LoginResponse
+import com.example.sample.network.api.LoginService
 import com.example.sample.network.RetrofitClient
 import com.example.sample.network.SocketHandler
 import retrofit2.Call

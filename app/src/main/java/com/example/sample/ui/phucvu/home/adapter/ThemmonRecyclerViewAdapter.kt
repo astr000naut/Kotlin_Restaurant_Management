@@ -1,6 +1,5 @@
-package com.example.sample.ui.phucvu.home
+package com.example.sample.ui.phucvu.home.adapter
 
-import android.graphics.Color
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
@@ -9,16 +8,15 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.cardview.widget.CardView
-import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sample.R
 import com.example.sample.model.Dish
-import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
 
 
-class ThemmonRecyclerViewAdapter : ListAdapter<Dish, ThemmonRecyclerViewAdapter.DishItemViewHolder>(DishDiffItemCallback()) {
+class ThemmonRecyclerViewAdapter : ListAdapter<Dish, ThemmonRecyclerViewAdapter.DishItemViewHolder>(
+    DishDiffItemCallback()
+) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)
         : DishItemViewHolder = DishItemViewHolder.inflateFrom(parent)
 

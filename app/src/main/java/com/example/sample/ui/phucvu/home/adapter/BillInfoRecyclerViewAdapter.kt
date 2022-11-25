@@ -1,14 +1,9 @@
-package com.example.sample.ui.phucvu.home
+package com.example.sample.ui.phucvu.home.adapter
 
 import android.graphics.Color
-import android.text.Editable
-import android.text.Layout
-import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -16,11 +11,11 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sample.R
 import com.example.sample.model.BP_Dish
-import com.example.sample.model.Dish
 
 
-
-class BillInfoRecyclerViewAdapter : ListAdapter<BP_Dish, BillInfoRecyclerViewAdapter.BillItemViewHolder>(BpDishDiffItemCallback()) {
+class BillInfoRecyclerViewAdapter : ListAdapter<BP_Dish, BillInfoRecyclerViewAdapter.BillItemViewHolder>(
+    BpDishDiffItemCallback()
+) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)
         : BillItemViewHolder = BillItemViewHolder.inflateFrom(parent)
 

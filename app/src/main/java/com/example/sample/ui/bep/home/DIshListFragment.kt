@@ -10,9 +10,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.sample.databinding.BpFragmentDishListBinding
 import com.example.sample.model.BP_Dish
-import com.example.sample.model.Dish
 import com.example.sample.model.database.BpDishDatabase
 import com.example.sample.network.SocketHandler
+import com.example.sample.ui.bep.home.adapter.DishListRecyclerViewAdapter
+import com.example.sample.ui.bep.home.viewmodel.DishListViewModel
+import com.example.sample.ui.bep.home.viewmodel.DishListViewModelFactory
 import com.google.gson.Gson
 import io.socket.client.Socket
 import java.util.*

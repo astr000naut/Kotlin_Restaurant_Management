@@ -1,4 +1,4 @@
-package com.example.sample.ui.bep.home
+package com.example.sample.ui.bep.home.adapter
 
 import androidx.recyclerview.widget.DiffUtil
 import com.example.sample.model.BP_Dish

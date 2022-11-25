@@ -1,4 +1,6 @@
-package com.example.sample.model
+package com.example.sample.model.apiresponse
+
+import com.example.sample.model.BP_Dish
 
 data class GetAllBpDishResponse(
     val status: String,

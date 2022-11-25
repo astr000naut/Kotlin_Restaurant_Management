@@ -9,11 +9,9 @@ import android.widget.Toast
 import androidx.navigation.findNavController
 import com.example.sample.databinding.PvFragmentCreateBillBinding
 import com.example.sample.model.BillResponse
-import com.example.sample.model.CreateBillRequest
-import com.example.sample.model.GetAllTableResponse
-import com.example.sample.network.BillService
+import com.example.sample.model.apirequest.CreateBillRequest
+import com.example.sample.network.api.BillService
 import com.example.sample.network.RetrofitClient
-import com.example.sample.network.TableService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

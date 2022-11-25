@@ -1,10 +1,9 @@
-package com.example.sample.ui.bep.home
+package com.example.sample.ui.bep.home.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.sample.model.BP_Dish
 import com.example.sample.model.database.BpDishDao
-import io.socket.client.Socket
 import kotlinx.coroutines.launch
 
 class DishListViewModel(val dao: BpDishDao) : ViewModel() {

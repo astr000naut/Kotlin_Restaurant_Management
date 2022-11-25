@@ -1,20 +1,22 @@
-package com.example.sample.ui.phucvu.home
+package com.example.sample.ui.phucvu.home.adapter
 
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sample.R
 import com.example.sample.model.Table
+import com.example.sample.ui.phucvu.home.TableListFragmentDirections
 import java.util.*
 
 
-class TableRecyclerViewAdapter : ListAdapter<Table, TableRecyclerViewAdapter.TableItemViewHolder>(TableDiffItemCallback()) {
+class TableRecyclerViewAdapter : ListAdapter<Table, TableRecyclerViewAdapter.TableItemViewHolder>(
+    TableDiffItemCallback()
+) {
 
 
 

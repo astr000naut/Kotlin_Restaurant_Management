@@ -1,4 +1,4 @@
-package com.example.sample.model
+package com.example.sample.model.apirequest
 
 data class CreateBillRequest(
     val taoboi: Int,

@@ -1,10 +1,12 @@
-package com.example.sample.network
+package com.example.sample.network.api
 
 import com.example.sample.model.*
+import com.example.sample.model.apirequest.AddDishRequest
+import com.example.sample.model.apiresponse.BillAddDishResponse
+import com.example.sample.model.apirequest.CreateBillRequest
+import com.example.sample.model.apiresponse.GetAllBpDishResponse
 import retrofit2.Call
 import retrofit2.http.Body
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.POST

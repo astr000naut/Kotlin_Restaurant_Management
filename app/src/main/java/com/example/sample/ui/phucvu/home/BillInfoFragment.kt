@@ -8,12 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.findNavController
-import com.example.sample.R
 import com.example.sample.databinding.PvFragmentBillInfoBinding
-import com.example.sample.model.GetAllBpDishResponse
-import com.example.sample.network.BillService
+import com.example.sample.model.apiresponse.GetAllBpDishResponse
+import com.example.sample.network.api.BillService
 import com.example.sample.network.RetrofitClient
 import com.example.sample.network.SocketHandler
+import com.example.sample.ui.phucvu.home.adapter.BillInfoRecyclerViewAdapter
 import io.socket.client.Socket
 import retrofit2.Call
 import retrofit2.Callback
