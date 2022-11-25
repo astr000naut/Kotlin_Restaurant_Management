@@ -7,5 +7,6 @@ data class Dish(
     val gia: Int,
     var soluong: Int = 0,
     var ghichu: String = "",
+    var billId: Int,
     var trangthai: String = ""
 ) {}

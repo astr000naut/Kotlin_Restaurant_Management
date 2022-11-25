@@ -15,6 +15,7 @@ import com.example.sample.model.database.BpDishDatabase
 import com.example.sample.network.SocketHandler
 import com.google.gson.Gson
 import io.socket.client.Socket
+import java.util.*
 
 
 class DIshListFragment : Fragment() {
@@ -34,7 +35,11 @@ class DIshListFragment : Fragment() {
     ): View? {
         _binding = BpFragmentDishListBinding.inflate(inflater, container, false)
         val root = binding.root
-
+        Timer().schedule(object: TimerTask() {
+            override fun run() {
+                mSocket.connect()
+            }
+        }, 1000)
         // Create view model
         val application = requireNotNull(this.activity).application
         val dao = BpDishDatabase.getInstance(application).bpDishDao
@@ -43,16 +48,19 @@ class DIshListFragment : Fragment() {
             this, viewModelFactory).get(DishListViewModel::class.java)
 
         // Create adapter
-        val adapter = DishListRecyclerViewAdapter{bpDish ->
+        val dagiaoListener: (BP_Dish) -> Unit = {bpDish ->
             viewModel.removeBpDish(bpDish)
+            mSocket.emit("dish_state_change", bpDish.id, 2)
         }
+        val batdaulamListener: (BP_Dish) -> Unit = {bpDish ->
+            viewModel.changeStateBpDish(bpDish)
+            mSocket.emit("dish_state_change", bpDish.id, 1)
+        }
+        val adapter = DishListRecyclerViewAdapter(
+            dagiaoListener,
+            batdaulamListener
+        )
         binding.bpDishlistRecyclerview.adapter = adapter
-
-
-        // get socket instance
-
-
-
 
 
         val gson = Gson()
@@ -62,12 +70,11 @@ class DIshListFragment : Fragment() {
                 adapter.submitList(it)
             }
         })
-        mSocket.connect()
+
         mSocket.on("dish_list_bep") { args ->
             if (args[0] != null) {
-                val dish_list = args[0].toString()
-                val objectBpDishList = gson.fromJson(dish_list, Array<BP_Dish>::class.java).asList()
-                Log.d("RECEIVED ABC", objectBpDishList.toString())
+                val bpdish_list = args[0].toString()
+                val objectBpDishList = gson.fromJson(bpdish_list, Array<BP_Dish>::class.java).asList()
                 objectBpDishList.forEach{bpDish: BP_Dish ->
                     viewModel.addBpDish(bpDish)
                 }
@@ -81,6 +88,8 @@ class DIshListFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         mSocket.disconnect()
+        mSocket.off("dish_list_bep")
+        Log.d("DISHLIST", "DESTROYED")
         _binding = null
     }
 }

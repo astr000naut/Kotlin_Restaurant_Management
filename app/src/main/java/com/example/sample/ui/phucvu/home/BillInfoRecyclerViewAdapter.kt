@@ -1,21 +1,26 @@
 package com.example.sample.ui.phucvu.home
 
+import android.graphics.Color
 import android.text.Editable
+import android.text.Layout
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sample.R
+import com.example.sample.model.BP_Dish
 import com.example.sample.model.Dish
 
 
 
-class BillInfoRecyclerViewAdapter : ListAdapter<Dish, BillInfoRecyclerViewAdapter.BillItemViewHolder>(DishDiffItemCallback()) {
+class BillInfoRecyclerViewAdapter : ListAdapter<BP_Dish, BillInfoRecyclerViewAdapter.BillItemViewHolder>(BpDishDiffItemCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)
         : BillItemViewHolder = BillItemViewHolder.inflateFrom(parent)
 
@@ -30,6 +35,8 @@ class BillInfoRecyclerViewAdapter : ListAdapter<Dish, BillInfoRecyclerViewAdapte
         val tv_soluong = rootView.findViewById<TextView>(R.id.tv_soluong)
         val tv_gia = rootView.findViewById<TextView>(R.id.tv_gia)
         val btn_capnhat = rootView.findViewById<Button>(R.id.btn_capnhatmon)
+        val tv_trangthai = rootView.findViewById<TextView>(R.id.tv_trangthai)
+        val layout = rootView.findViewById<ConstraintLayout>(R.id.card_constrain)
         companion object {
             fun inflateFrom(parent: ViewGroup): BillItemViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
@@ -37,11 +44,17 @@ class BillInfoRecyclerViewAdapter : ListAdapter<Dish, BillInfoRecyclerViewAdapte
                 return BillItemViewHolder(view)
             }
         }
-        fun bind(item: Dish) {
+        fun bind(item: BP_Dish) {
             tv_tenmon.text = item.ten
             tv_ghichu.text = "Ghi chú: " + if (item.ghichu != null) item.ghichu else ""
             tv_soluong.text = "SL: " + item.soluong.toString()
             tv_gia.text = "Giá: " + item.gia.toString()
+            tv_trangthai.text = item.trangthai
+            when (item.trangthai.toString()) {
+                "Đang làm" -> layout.setBackgroundColor(Color.TRANSPARENT)
+                "Đã xong" -> layout.setBackgroundColor(Color.GREEN)
+                "Chưa làm" -> layout.setBackgroundColor(Color.YELLOW)
+            }
         }
     }
 

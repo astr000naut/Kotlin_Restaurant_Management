@@ -18,9 +18,9 @@ interface BillService {
 
     @Headers("Accept: application/json")
     @POST("bill/adddish")
-    fun addDish(@Body addDishRequest: AddDishRequest): Call<BillResponse>
+    fun addDish(@Body addDishRequest: AddDishRequest): Call<BillAddDishResponse>
 
     @GET("bill/getalldish")
-    fun getAllDish(@Query("id") id: Int): Call<GetAllDishResponse>
+    fun getAllBpDish(@Query("id") id: Int): Call<GetAllBpDishResponse>
 
 }

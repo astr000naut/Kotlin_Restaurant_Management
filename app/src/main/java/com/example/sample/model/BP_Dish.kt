@@ -6,9 +6,8 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "bp_dish_table")
 data class BP_Dish(
-    @PrimaryKey(autoGenerate = true)
-    val dbid: Int = 0,
-    val id: Int = 0,
+    @PrimaryKey
+    val id: Int,
     var ban: Int,
     val ten: String,
     val gia: Int,
@@ -17,4 +16,5 @@ data class BP_Dish(
     var ghichu: String?,
     @ColumnInfo(name = "trangthai", defaultValue = "")
     var trangthai: String?,
+    var billId: Int
 ) {}

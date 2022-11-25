@@ -1,5 +1,7 @@
 package com.example.sample.ui.bep.home
 
+import android.graphics.Color
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Button
@@ -9,11 +11,13 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sample.R
 import com.example.sample.model.BP_Dish
+import io.socket.client.Socket
 
 
 class DishListRecyclerViewAdapter (
-    val dagiaoListener: (bpDish: BP_Dish) -> Unit
-        ): ListAdapter<BP_Dish, DishListRecyclerViewAdapter.BpDishItemViewHolder>(
+    val dagiaoListener: (BP_Dish) -> Unit,
+    val batdaulamListener: (BP_Dish) -> Unit
+    ): ListAdapter<BP_Dish, DishListRecyclerViewAdapter.BpDishItemViewHolder>(
     BpDishDiffItemCallback()
 ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)
@@ -21,7 +25,7 @@ class DishListRecyclerViewAdapter (
 
     override fun onBindViewHolder(holder: BpDishItemViewHolder, position: Int) {
         val item = getItem(position)
-        holder.bind(item, dagiaoListener)
+        holder.bind(item, dagiaoListener, batdaulamListener)
     }
 
     class BpDishItemViewHolder(val rootView: CardView): RecyclerView.ViewHolder(rootView) {
@@ -38,12 +42,30 @@ class DishListRecyclerViewAdapter (
                 return BpDishItemViewHolder(view)
             }
         }
-        fun bind(item: BP_Dish, dagiaoListener: (bpDish: BP_Dish) -> Unit) {
+        fun bind(item: BP_Dish,
+                 dagiaoListener: (BP_Dish) -> Unit,
+                 batdaulamListener: (BP_Dish) -> Unit
+        ) {
             tv_tenmon.text = item.ten
             tv_ghichu.text = "Ghi chú: " + if (item.ghichu != null) item.ghichu else ""
             tv_soluong.text = "SL: " + item.soluong.toString()
             tv_tenban.text = "Bàn số: " + item.ban.toString()
             btn_dagiao.setOnClickListener {dagiaoListener(item)}
+            Log.d("ITEM STATUS", "${item.ten} ${item.trangthai}")
+            if (item.trangthai.toString() == "Đang làm") {
+                btn_batdaulam.text = "Đang làm"
+                btn_batdaulam.isEnabled = false
+                btn_batdaulam.isClickable = false
+                btn_batdaulam.setBackgroundColor(Color.YELLOW)
+            } else {
+                btn_batdaulam.text = "Bắt đầu làm"
+                btn_batdaulam.isEnabled = true
+                btn_batdaulam.isClickable = true
+                btn_batdaulam.setBackgroundColor(Color.CYAN)
+            }
+            btn_batdaulam.setOnClickListener {
+                batdaulamListener(item)
+            }
         }
     }
 
