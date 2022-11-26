@@ -11,17 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="334dp"
         android:background="#A5C4DC"
-        android:layout_margin="20dp">
-
-        <Spinner
-            android:id="@+id/spinner8"
-            android:layout_width="89dp"
-            android:layout_height="26dp"
-            android:layout_marginTop="36dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.79"
-            app:layout_constraintStart_toStartOf="@+id/guideline9"
-            app:layout_constraintTop_toBottomOf="@+id/spinner7" />
+        android:layout_margin="12dp">
 
         <TextView
             android:id="@+id/textView26"
@@ -29,34 +19,10 @@
             android:layout_height="35dp"
             android:layout_marginStart="44dp"
             android:layout_marginTop="40dp"
-            android:text="Loại bàn"
+            android:text="Số chỗ: "
             android:textSize="22sp"
             app:layout_constraintStart_toStartOf="@+id/guideline9"
             app:layout_constraintTop_toBottomOf="@+id/textView25" />
-
-        <TextView
-            android:id="@+id/textView23"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Số bàn trống: 10"
-            android:textSize="22sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.25"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline7" />
-
-        <TextView
-            android:id="@+id/textView24"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Đang phục vụ: 15"
-            android:textSize="22sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.74"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline7" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline7"
@@ -66,8 +32,9 @@
             app:layout_constraintGuide_begin="20dp" />
 
         <RadioGroup
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:id="@+id/rg_trangthai"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.14"
@@ -81,21 +48,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Bàn trống"
-                android:textSize="22sp"/>
+                android:textSize="22sp"
+
+                android:layoutDirection="rtl"/>
 
             <RadioButton
                 android:id="@+id/btn_dangphucvu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Đang phục vụ"
-                android:textSize="22sp"/>
+                android:textSize="22sp"
+
+                android:layoutDirection="rtl"/>
 
             <RadioButton
                 android:id="@+id/btn_tatcaban"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tất cả bàn"
-                android:textSize="22sp"/>
+                android:textSize="22sp"
+                android:layoutDirection="rtl"/>
         </RadioGroup>
 
         <androidx.constraintlayout.widget.Guideline
@@ -103,7 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="92dp" />
+            app:layout_constraintGuide_begin="47dp" />
 
         <TextView
             android:id="@+id/textView25"
@@ -111,7 +83,7 @@
             android:layout_height="26dp"
             android:layout_marginStart="44dp"
             android:layout_marginTop="28dp"
-            android:text="Khu vực"
+            android:text="Khu vực: "
             android:textSize="22sp"
             app:layout_constraintStart_toStartOf="@+id/guideline9"
             app:layout_constraintTop_toTopOf="@+id/guideline8" />
@@ -123,18 +95,8 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.55" />
 
-        <Spinner
-            android:id="@+id/spinner7"
-            android:layout_width="89dp"
-            android:layout_height="26dp"
-            android:layout_marginTop="32dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.79"
-            app:layout_constraintStart_toStartOf="@+id/guideline9"
-            app:layout_constraintTop_toTopOf="@+id/guideline8" />
-
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/btn_timkiem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="164dp"
@@ -142,6 +104,26 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.475"
             app:layout_constraintStart_toStartOf="@+id/guideline9"
+            app:layout_constraintTop_toTopOf="@+id/guideline8" />
+
+        <Spinner
+            android:id="@+id/spn_khuvuc"
+            android:layout_width="178dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="27dp"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="Khu vực: "
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline8" />
+
+        <Spinner
+            android:id="@+id/spn_loaiban"
+            android:layout_width="174dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="92dp"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="Số chỗ: "
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline8" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -7,10 +7,12 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sample.R
 import com.example.sample.model.BP_Dish
+import com.example.sample.ui.phucvu.home.BillInfoFragmentDirections
 
 
 class BillInfoRecyclerViewAdapter : ListAdapter<BP_Dish, BillInfoRecyclerViewAdapter.BillItemViewHolder>(
@@ -49,6 +51,10 @@ class BillInfoRecyclerViewAdapter : ListAdapter<BP_Dish, BillInfoRecyclerViewAda
                 "Đang làm" -> layout.setBackgroundColor(Color.TRANSPARENT)
                 "Đã xong" -> layout.setBackgroundColor(Color.GREEN)
                 "Chưa làm" -> layout.setBackgroundColor(Color.YELLOW)
+            }
+            btn_capnhat.setOnClickListener {
+                val action = BillInfoFragmentDirections.actionBillInfoFragmentToCapnhatmonFragment(item.billId, item.id)
+                rootView.findNavController().navigate(action)
             }
         }
     }

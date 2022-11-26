@@ -11,8 +11,6 @@ import com.example.sample.R
 
 
 class CapnhatmonFragment : Fragment() {
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
