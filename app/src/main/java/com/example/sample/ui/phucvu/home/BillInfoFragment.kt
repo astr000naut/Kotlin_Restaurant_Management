@@ -9,6 +9,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.findNavController
 import com.example.sample.databinding.PvFragmentBillInfoBinding
+import com.example.sample.model.Bill
+import com.example.sample.model.BillResponse
+
 import com.example.sample.model.apiresponse.GetAllBpDishResponse
 import com.example.sample.network.api.BillService
 import com.example.sample.network.RetrofitClient
@@ -68,6 +71,30 @@ class BillInfoFragment : Fragment() {
 
         // Call API to get bill info item
         var service = RetrofitClient.retrofit.create(BillService::class.java)
+        val getBillRequest = service.getBill(billId)
+        getBillRequest.enqueue(
+            object : Callback<BillResponse> {
+                override fun onResponse(
+                    call: Call<BillResponse>,
+                    response: Response<BillResponse>
+                ) {
+                    if (response.body()?.status.toString() == "success") {
+                        val bill = response.body()?.bill
+                        binding.tvTenban.text = "Bàn số: " + bill?.id
+                        binding.tvNgaytao.text = "Ngày tạo: " + bill?.createdAt
+                        binding.tvTaoboi.text = "Tạo bởi: " + bill?.taoboi
+                        binding.tvGia.text = "Giá: " + (bill?.gia ?:0)
+                    } else {
+                        Toast.makeText(context, response.body()?.message.toString(), Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<BillResponse>, t: Throwable) {
+                    Toast.makeText(context, t.message.toString(), Toast.LENGTH_SHORT).show()
+                }
+
+            }
+        )
         val getBillAllBpDishRequest = service.getAllBpDish(billId)
         getBillAllBpDishRequest.enqueue(object : Callback<GetAllBpDishResponse> {
             override fun onResponse(

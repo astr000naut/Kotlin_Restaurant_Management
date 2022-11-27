@@ -137,8 +137,6 @@ class CapnhatmonFragment : Fragment() {
             })
 
         }
-
-
         return root
     }
 

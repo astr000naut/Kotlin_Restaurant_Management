@@ -23,6 +23,9 @@ interface BillService {
     @GET("bill/getalldish")
     fun getAllBpDish(@Query("id") id: Int): Call<GetAllBpDishResponse>
 
+    @GET("bill/getone")
+    fun getBill(@Query("id") id: Int): Call<BillResponse>
+
     @PUT("bill/updatebpdish")
     fun updateBillBpDish(@Body updateBillBpDish: UpdateBillBpDish): Call<DefaultResponse>
 
