@@ -2,6 +2,7 @@ package com.example.sample.ui.phucvu.home.adapter
 
 import android.graphics.Color
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
@@ -48,12 +49,19 @@ class BillInfoRecyclerViewAdapter : ListAdapter<BP_Dish, BillInfoRecyclerViewAda
             tv_gia.text = "Giá: " + item.gia.toString()
             tv_trangthai.text = item.trangthai
             when (item.trangthai.toString()) {
-                "Đang làm" -> layout.setBackgroundColor(Color.TRANSPARENT)
-                "Đã xong" -> layout.setBackgroundColor(Color.GREEN)
+                "Đang làm" -> {
+                    layout.setBackgroundColor(Color.TRANSPARENT)
+                    btn_capnhat.visibility = View.INVISIBLE
+                }
+                "Đã xong" -> {
+                    layout.setBackgroundColor(Color.GREEN)
+                    btn_capnhat.visibility = View.INVISIBLE
+                }
                 "Chưa làm" -> layout.setBackgroundColor(Color.YELLOW)
             }
             btn_capnhat.setOnClickListener {
-                val action = BillInfoFragmentDirections.actionBillInfoFragmentToCapnhatmonFragment(item.billId, item.id)
+                val action = BillInfoFragmentDirections.actionBillInfoFragmentToCapnhatmonFragment(
+                    item.billId, item.id, item.ten, item.soluong, item.ghichu ?: "", item.trangthai.toString(), item.ban)
                 rootView.findNavController().navigate(action)
             }
         }

@@ -121,10 +121,6 @@ class BillInfoFragment : Fragment() {
             }
         }
 
-
-
-
-
         val view = binding.root
         return view
     }

@@ -59,6 +59,25 @@
         <argument
             android:name="mon_id"
             app:argType="integer" />
+        <argument
+            android:name="ten"
+            app:argType="string" />
+        <argument
+            android:name="soluong"
+            app:argType="integer" />
+        <argument
+            android:name="ghichu"
+            app:argType="string" />
+        <argument
+            android:name="trangthai"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_capnhatmonFragment_to_billInfoFragment"
+            app:destination="@id/billInfoFragment"
+            app:popUpTo="@id/tableListFragment" />
+        <argument
+            android:name="table_id"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/themmonFragment"

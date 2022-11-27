@@ -19,8 +19,17 @@ interface BpDishDao {
     @Delete
     suspend fun delete(bpDish: BP_Dish)
 
+    @Query("DELETE FROM bp_dish_table WHERE id = :id")
+    suspend fun deleteById(id: Int)
+
+
     @Query("UPDATE bp_dish_table SET trangthai = 'Đang làm' WHERE id = :id")
     suspend fun changestate(id: Int)
+
+    @Query("UPDATE bp_dish_table SET ghichu = :ghichu, soluong = :soluong WHERE id = :id")
+    suspend fun updateById(id: Int, soluong: Int, ghichu: String)
+
+
 
 
     @Query("SELECT * FROM bp_dish_table ORDER BY id ASC")

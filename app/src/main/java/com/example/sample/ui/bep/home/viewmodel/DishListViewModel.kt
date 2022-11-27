@@ -19,6 +19,17 @@ class DishListViewModel(val dao: BpDishDao) : ViewModel() {
             dao.delete(bpDish)
         }
     }
+    fun removeBpDishById(id: Int) {
+        viewModelScope.launch {
+            dao.deleteById(id)
+        }
+    }
+    fun updateBpDishById(id: Int, soluong: Int, ghichu: String) {
+        viewModelScope.launch {
+            dao.updateById(id, soluong, ghichu)
+        }
+    }
+
     fun changeStateBpDish(bpDish: BP_Dish) {
         viewModelScope.launch {
             dao.changestate(bpDish.id)

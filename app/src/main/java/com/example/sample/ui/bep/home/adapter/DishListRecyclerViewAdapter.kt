@@ -46,7 +46,7 @@ class DishListRecyclerViewAdapter (
                  batdaulamListener: (BP_Dish) -> Unit
         ) {
             tv_tenmon.text = item.ten
-            tv_ghichu.text = "Ghi chú: " + if (item.ghichu != null) item.ghichu else ""
+            tv_ghichu.text = if (item.ghichu != null) item.ghichu else ""
             tv_soluong.text = "SL: " + item.soluong.toString()
             tv_tenban.text = "Bàn số: " + item.ban.toString()
             btn_dagiao.setOnClickListener {dagiaoListener(item)}

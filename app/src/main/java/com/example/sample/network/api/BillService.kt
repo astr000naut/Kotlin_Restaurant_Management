@@ -4,13 +4,11 @@ import com.example.sample.model.*
 import com.example.sample.model.apirequest.AddDishRequest
 import com.example.sample.model.apiresponse.BillAddDishResponse
 import com.example.sample.model.apirequest.CreateBillRequest
+import com.example.sample.model.apirequest.UpdateBillBpDish
+import com.example.sample.model.apiresponse.DefaultResponse
 import com.example.sample.model.apiresponse.GetAllBpDishResponse
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Headers
-import retrofit2.http.POST
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface BillService {
 
@@ -24,5 +22,8 @@ interface BillService {
 
     @GET("bill/getalldish")
     fun getAllBpDish(@Query("id") id: Int): Call<GetAllBpDishResponse>
+
+    @PUT("bill/updatebpdish")
+    fun updateBillBpDish(@Body updateBillBpDish: UpdateBillBpDish): Call<DefaultResponse>
 
 }

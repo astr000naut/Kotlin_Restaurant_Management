@@ -82,6 +82,18 @@ class DIshListFragment : Fragment() {
                 }
             }
         }
+        mSocket.on("dish_update_bep") { args ->
+            if (args[0] != null) {
+                Log.d("DISH UPDATE BEP",
+                    args[0].toString() + args[1].toString() + args[2].toString() + args[3].toString())
+                if (args[0].toString() == "capnhat") {
+                    viewModel.updateBpDishById(args[1].toString().toInt(), args[2].toString().toInt(), args[3].toString())
+                }
+                if (args[0].toString() == "xoa") {
+                    viewModel.removeBpDishById(args[1].toString().toInt())
+                }
+            }
+        }
 
 
         return root
