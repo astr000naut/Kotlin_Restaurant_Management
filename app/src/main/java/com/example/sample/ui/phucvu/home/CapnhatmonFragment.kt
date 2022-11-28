@@ -12,7 +12,7 @@ import androidx.navigation.findNavController
 import com.example.sample.databinding.PvFragmentCapnhatmonBinding
 import com.example.sample.model.apirequest.UpdateBillBpDish
 import com.example.sample.model.apiresponse.DefaultResponse
-import com.example.sample.model.apiresponse.GetAllBpDishResponse
+import com.example.sample.model.apiresponse.GetListBpDishResponse
 import com.example.sample.network.RetrofitClient
 
 

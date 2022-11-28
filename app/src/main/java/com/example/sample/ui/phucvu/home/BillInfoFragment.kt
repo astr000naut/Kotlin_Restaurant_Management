@@ -12,7 +12,7 @@ import com.example.sample.databinding.PvFragmentBillInfoBinding
 import com.example.sample.model.Bill
 import com.example.sample.model.BillResponse
 
-import com.example.sample.model.apiresponse.GetAllBpDishResponse
+import com.example.sample.model.apiresponse.GetListBpDishResponse
 import com.example.sample.network.api.BillService
 import com.example.sample.network.RetrofitClient
 import com.example.sample.network.SocketHandler
@@ -96,10 +96,10 @@ class BillInfoFragment : Fragment() {
             }
         )
         val getBillAllBpDishRequest = service.getAllBpDish(billId)
-        getBillAllBpDishRequest.enqueue(object : Callback<GetAllBpDishResponse> {
+        getBillAllBpDishRequest.enqueue(object : Callback<GetListBpDishResponse> {
             override fun onResponse(
-                call: Call<GetAllBpDishResponse>,
-                response: Response<GetAllBpDishResponse>
+                call: Call<GetListBpDishResponse>,
+                response: Response<GetListBpDishResponse>
             ) {
                 if (response.body()?.status.toString() == "success") {
                     val bpdishList = response.body()?.bp_dishes
@@ -112,7 +112,7 @@ class BillInfoFragment : Fragment() {
                 }
             }
 
-            override fun onFailure(call: Call<GetAllBpDishResponse>, t: Throwable) {
+            override fun onFailure(call: Call<GetListBpDishResponse>, t: Throwable) {
                 Toast.makeText(context, t.message.toString(), Toast.LENGTH_SHORT).show()
             }
 
@@ -123,10 +123,10 @@ class BillInfoFragment : Fragment() {
                 Log.d("MESSII", args[0].toString())
                 if (billId.toString() == args[0].toString()) {
                     Log.d("RESET BILL INFO", "RESET")
-                    getBillAllBpDishRequest.clone().enqueue(object : Callback<GetAllBpDishResponse> {
+                    getBillAllBpDishRequest.clone().enqueue(object : Callback<GetListBpDishResponse> {
                         override fun onResponse(
-                            call: Call<GetAllBpDishResponse>,
-                            response: Response<GetAllBpDishResponse>
+                            call: Call<GetListBpDishResponse>,
+                            response: Response<GetListBpDishResponse>
                         ) {
                             if (response.body()?.status.toString() == "success") {
                                 val bpdishList = response.body()?.bp_dishes
@@ -139,7 +139,7 @@ class BillInfoFragment : Fragment() {
                             }
                         }
 
-                        override fun onFailure(call: Call<GetAllBpDishResponse>, t: Throwable) {
+                        override fun onFailure(call: Call<GetListBpDishResponse>, t: Throwable) {
                             Toast.makeText(context, t.message.toString(), Toast.LENGTH_SHORT).show()
                         }
 

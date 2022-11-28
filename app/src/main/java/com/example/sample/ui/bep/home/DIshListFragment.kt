@@ -6,17 +6,27 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.sample.databinding.BpFragmentDishListBinding
+
 import com.example.sample.model.BP_Dish
+import com.example.sample.model.BillResponse
+import com.example.sample.model.apiresponse.GetListBpDishResponse
 import com.example.sample.model.database.BpDishDatabase
+import com.example.sample.network.RetrofitClient
 import com.example.sample.network.SocketHandler
+import com.example.sample.network.api.BillService
+import com.example.sample.network.api.DishService
 import com.example.sample.ui.bep.home.adapter.DishListRecyclerViewAdapter
 import com.example.sample.ui.bep.home.viewmodel.DishListViewModel
 import com.example.sample.ui.bep.home.viewmodel.DishListViewModelFactory
 import com.google.gson.Gson
 import io.socket.client.Socket
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.*
 
 
@@ -72,6 +82,32 @@ class DIshListFragment : Fragment() {
                 adapter.submitList(it)
             }
         })
+
+        var service = RetrofitClient.retrofit.create(DishService::class.java)
+        val getUnfinishedBpDishRequest = service.getUnfinishedDish()
+        getUnfinishedBpDishRequest.enqueue(
+            object : Callback<GetListBpDishResponse> {
+                override fun onResponse(
+                    call: Call<GetListBpDishResponse>,
+                    response: Response<GetListBpDishResponse>
+                ) {
+                    if (response.body()?.status.toString() == "success") {
+                        val bpdish_list = response.body()?.bp_dishes
+                        Log.d("UNFINISHED DISH", bpdish_list.toString())
+                        bpdish_list?.forEach{bpDish: BP_Dish ->
+                            viewModel.addBpDish(bpDish)
+                        }
+                    } else {
+                        Toast.makeText(context, response.body()?.message.toString(), Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<GetListBpDishResponse>, t: Throwable) {
+                    Toast.makeText(context, t.message.toString(), Toast.LENGTH_SHORT).show()
+                }
+
+            }
+        )
 
         mSocket.on("dish_list_bep") { args ->
             if (args[0] != null) {

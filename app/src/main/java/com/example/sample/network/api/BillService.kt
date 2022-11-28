@@ -6,7 +6,7 @@ import com.example.sample.model.apiresponse.BillAddDishResponse
 import com.example.sample.model.apirequest.CreateBillRequest
 import com.example.sample.model.apirequest.UpdateBillBpDish
 import com.example.sample.model.apiresponse.DefaultResponse
-import com.example.sample.model.apiresponse.GetAllBpDishResponse
+import com.example.sample.model.apiresponse.GetListBpDishResponse
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -21,7 +21,7 @@ interface BillService {
     fun addDish(@Body addDishRequest: AddDishRequest): Call<BillAddDishResponse>
 
     @GET("bill/getalldish")
-    fun getAllBpDish(@Query("id") id: Int): Call<GetAllBpDishResponse>
+    fun getAllBpDish(@Query("id") id: Int): Call<GetListBpDishResponse>
 
     @GET("bill/getone")
     fun getBill(@Query("id") id: Int): Call<BillResponse>
