@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tn_mobile_navigation"
+    app:startDestination="@+id/tn_nav_home">
+    <fragment
+        android:id="@+id/tn_nav_home"
+        android:name="com.example.sample.ui.thungan.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/tn_fragment_home" />
+    <fragment
+        android:id="@+id/tn_nav_setting"
+        android:name="com.example.sample.ui.thungan.editinfo.SettingFragment"
+        android:label="tn_fragment_setting"
+        tools:layout="@layout/tn_fragment_setting"/>
+    <fragment
+        android:id="@+id/tn_nav_bill_history"
+        android:name="com.example.sample.ui.thungan.billhistrory.BillHistoryFragment"
+        android:label="tn_fragment_bill_history"
+        tools:layout="@layout/tn_fragment_bill_history" />
+</navigation>

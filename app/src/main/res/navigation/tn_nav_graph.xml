@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tn_nav_graph"
+    app:startDestination="@id/tn_tableListFragment">
+
+    <fragment
+        android:id="@+id/tn_tableListFragment"
+        android:name="com.example.sample.ui.thungan.home.TableListFragment"
+        android:label="tn_fragment_table_list"
+        tools:layout="@layout/tn_fragment_table_list" />
+</navigation>
