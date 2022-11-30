@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ql_dm_nav_graph"
+    app:startDestination="@id/dishListFragment">
+
+    <fragment
+        android:id="@+id/dishListFragment"
+        android:name="com.example.sample.ui.quanly.dishmanage.DishListFragment"
+        android:label="ql_fragment_dish_list"
+        tools:layout="@layout/ql_fragment_dish_list" />
+</navigation>
