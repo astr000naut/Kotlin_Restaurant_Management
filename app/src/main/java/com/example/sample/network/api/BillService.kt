@@ -9,6 +9,7 @@ import com.example.sample.model.apiresponse.DefaultResponse
 import com.example.sample.model.apiresponse.GetListBpDishResponse
 import retrofit2.Call
 import retrofit2.http.*
+import java.time.DayOfWeek
 
 interface BillService {
 
@@ -25,6 +26,10 @@ interface BillService {
 
     @GET("bill/getone")
     fun getBill(@Query("id") id: Int): Call<BillResponse>
+
+    @GET("bill/filter")
+    fun filterBill(@Query("fd")fd: Int, @Query("fm")fm: Int, @Query("fy")fy: Int,
+                   @Query("td")td: Int, @Query("tm")tm: Int, @Query("ty")ty: Int): Call<BillFilterResponse>
 
     @PUT("bill/updatebpdish")
     fun updateBillBpDish(@Body updateBillBpDish: UpdateBillBpDish): Call<DefaultResponse>

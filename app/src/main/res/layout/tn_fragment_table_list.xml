@@ -1,14 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.thungan.home.TableListFragment">
+    android:orientation="vertical"
+    tools:context=".ui.thungan.home.TN_TableListFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="334dp"
+        android:background="#A5C4DC"
+        android:layout_margin="12dp">
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="40dp"
+            android:text="Số chỗ: "
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"
+            app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <RadioGroup
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/rg_trangthai"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.14"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline8"
+            app:layout_constraintVertical_bias="0.19999999"
+            android:checkedButton="@id/btn_tatcaban">
+
+            <RadioButton
+                android:id="@+id/btn_bantrong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bàn trống"
+                android:textSize="22sp"
+
+                android:layoutDirection="rtl"/>
+
+            <RadioButton
+                android:id="@+id/btn_dangphucvu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Đang phục vụ"
+                android:textSize="22sp"
+
+                android:layoutDirection="rtl"/>
+
+            <RadioButton
+                android:id="@+id/btn_tatcaban"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tất cả bàn"
+                android:textSize="22sp"
+                android:layoutDirection="rtl"/>
+        </RadioGroup>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="47dp" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="28dp"
+            android:text="Khu vực: "
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"
+            app:layout_constraintTop_toTopOf="@+id/guideline8" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.55" />
+
+        <Button
+            android:id="@+id/btn_timkiem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="164dp"
+            android:text="Tìm kiếm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.475"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"
+            app:layout_constraintTop_toTopOf="@+id/guideline8" />
+
+        <Spinner
+            android:id="@+id/spn_khuvuc"
+            android:layout_width="178dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="27dp"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="Khu vực: "
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline8" />
+
+        <Spinner
+            android:id="@+id/spn_loaiban"
+            android:layout_width="174dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="92dp"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="Số chỗ: "
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline8" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pv_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
-</FrameLayout>
+        tools:layout_editor_absoluteY="230dp"
+        android:layout_margin="5dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="3"/>
+</LinearLayout>

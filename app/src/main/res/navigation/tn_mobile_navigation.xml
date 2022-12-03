@@ -6,7 +6,7 @@
     app:startDestination="@+id/tn_nav_home">
     <fragment
         android:id="@+id/tn_nav_home"
-        android:name="com.example.sample.ui.thungan.home.HomeFragment"
+        android:name="com.example.sample.ui.thungan.home.TN_HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/tn_fragment_home" />
     <fragment
@@ -16,7 +16,7 @@
         tools:layout="@layout/tn_fragment_setting"/>
     <fragment
         android:id="@+id/tn_nav_bill_history"
-        android:name="com.example.sample.ui.thungan.billhistrory.BillHistoryFragment"
+        android:name="com.example.sample.ui.thungan.billhistrory.BH_BillHistoryFragment"
         android:label="tn_fragment_bill_history"
         tools:layout="@layout/tn_fragment_bill_history" />
 </navigation>
