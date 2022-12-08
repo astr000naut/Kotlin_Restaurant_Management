@@ -1,15 +1,12 @@
 package com.example.sample.ui.thungan.billhistrory
 
-import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
-import com.example.sample.R
 import com.example.sample.databinding.TnBhBillinfoDialogFragBinding
-import com.example.sample.model.BillFilterResponse
 import com.example.sample.model.apiresponse.GetListBpDishResponse
 import com.example.sample.network.RetrofitClient
 import com.example.sample.network.api.BillService
@@ -19,7 +16,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-class BH_BillInfoDialog(val billId: Int, val banId: Int, val createdAt: String, val price: Int, val taoboi: String) : DialogFragment() {
+class BH_BillInfoDialog(val billId: Int, val banId: String, val createdAt: String, val price: Int, val taoboi: String) : DialogFragment() {
 
     private var _binding: TnBhBillinfoDialogFragBinding? = null
     private val binding get() = _binding!!
@@ -34,7 +31,7 @@ class BH_BillInfoDialog(val billId: Int, val banId: Int, val createdAt: String, 
         val adapter = BH_BpDishRecyclerViewAdapter()
         binding.tnBhBillinfoDialogRv.adapter = adapter
 
-        binding.tvBhBiTenban.text = "Bàn số: " + banId
+        binding.tvBhBiTenban.text = "Bàn: " + banId
         binding.tvBhBiTaoboi.text = "Tạo bởi: " + taoboi
         binding.tvBhBiGia.text = "Giá: " + price
         binding.tvBhBiCreatedAt.text = "Ngày tạo: " + createdAt

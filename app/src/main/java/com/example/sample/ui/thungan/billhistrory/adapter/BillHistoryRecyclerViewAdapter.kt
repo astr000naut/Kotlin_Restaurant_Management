@@ -13,7 +13,7 @@ import com.example.sample.ui.thungan.billhistrory.BH_BillInfoDialog
 
 
 class BillHistoryRecyclerViewAdapter(
-    val btn_chitietListener: (Int, Int, String, Int, String) -> Unit
+    val btn_chitietListener: (Int, String, String, Int, String) -> Unit
 ) : ListAdapter<Bill, BillHistoryRecyclerViewAdapter.BillItemViewHolder>(
     BillHistoryDiffItemCallback()
 ) {
@@ -38,7 +38,7 @@ class BillHistoryRecyclerViewAdapter(
             }
         }
         fun bind(item: Bill,
-                 btn_chitietListener: (Int, Int, String, Int, String) -> Unit) {
+                 btn_chitietListener: (Int, String, String, Int, String) -> Unit) {
             tv_tenban.text = "Bàn số: " + item.ban
             tv_ngaytao.text = "Ngày tạo: " + item.createdAt
             tv_gia.text = "Giá: " + item.gia

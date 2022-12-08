@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 data class BP_Dish(
     @PrimaryKey
     val id: Int,
-    var ban: Int,
+    var ban: String,
     val ten: String,
     val gia: Int,
     var soluong: Int = 0,

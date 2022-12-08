@@ -22,7 +22,7 @@
             app:argType="integer" />
         <argument
             android:name="table_id"
-            app:argType="integer" />
+            app:argType="string" />
         <action
             android:id="@+id/action_tn_bill_info_frag_to_tn_table_list_frag"
             app:destination="@id/tn_table_list_frag"

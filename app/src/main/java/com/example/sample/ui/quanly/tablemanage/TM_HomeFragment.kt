@@ -7,7 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.sample.R
 
-class TableManageFragment : Fragment() {
+
+class TM_HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,7 +19,8 @@ class TableManageFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.ql_fragment_table_manage, container, false)
+        return inflater.inflate(R.layout.ql_tm_fragment_home, container, false)
     }
+
 
 }

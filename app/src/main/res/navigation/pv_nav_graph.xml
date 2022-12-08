@@ -21,7 +21,7 @@
             app:destination="@id/capnhatmonFragment" />
         <argument
             android:name="table_id"
-            app:argType="integer" />
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/createBillFragment2"
@@ -34,7 +34,7 @@
             app:popUpTo="@id/tableListFragment" />
         <argument
             android:name="table_id"
-            app:argType="integer" />
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/tableListFragment"
@@ -77,7 +77,7 @@
             app:popUpTo="@id/tableListFragment" />
         <argument
             android:name="table_id"
-            app:argType="integer" />
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/themmonFragment"
@@ -92,6 +92,6 @@
             app:popUpTo="@id/tableListFragment" />
         <argument
             android:name="table_id"
-            app:argType="integer" />
+            app:argType="string" />
     </fragment>
 </navigation>

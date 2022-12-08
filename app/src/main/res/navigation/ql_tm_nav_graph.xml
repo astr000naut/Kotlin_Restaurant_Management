@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ql_tm_nav_graph"
+    app:startDestination="@id/TM_AreaList">
+    <fragment
+        android:id="@+id/TM_AreaList"
+        tools:layout="@layout/ql_tm_arealist_fragment"
+        android:name="com.example.sample.ui.quanly.tablemanage.TM_AreaList"
+        android:label="TM_TableManage" >
+        <action
+            android:id="@+id/action_TM_AreaList_to_TM_AddArea"
+            app:destination="@id/TM_AddArea" />
+        <action
+            android:id="@+id/action_TM_AreaList_to_TM_AreaInfo"
+            app:destination="@id/TM_AreaInfo" />
+    </fragment>
+    <fragment
+        android:id="@+id/TM_AreaInfo"
+        android:name="com.example.sample.ui.quanly.tablemanage.TM_AreaInfo"
+        android:label="ql_tm_areainfo_frag"
+        tools:layout="@layout/ql_tm_areainfo_frag" >
+        <argument
+            android:name="areaname"
+            app:argType="string" />
+        <argument
+            android:name="slb2"
+            app:argType="integer" />
+        <argument
+            android:name="slb4"
+            app:argType="integer" />
+        <argument
+            android:name="slb6"
+            app:argType="integer" />
+        <argument
+            android:name="slb8"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_TM_AreaInfo_to_TM_AreaList"
+            app:destination="@id/TM_AreaList"
+            app:popUpTo="@id/TM_AreaList" />
+    </fragment>
+    <fragment
+        android:id="@+id/TM_AddArea"
+        android:name="com.example.sample.ui.quanly.tablemanage.TM_AddArea"
+        android:label="ql_tm_addarea_frag"
+        tools:layout="@layout/ql_tm_addarea_frag" >
+        <action
+            android:id="@+id/action_TM_AddArea_to_TM_AreaList"
+            app:destination="@id/TM_AreaList"
+            app:popUpTo="@id/TM_AreaList" />
+    </fragment>
+</navigation>

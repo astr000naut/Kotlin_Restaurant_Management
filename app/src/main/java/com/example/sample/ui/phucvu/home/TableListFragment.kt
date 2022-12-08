@@ -128,8 +128,13 @@ class TableListFragment : Fragment() {
             ) {
                 if (response.body()?.status.toString() == "success") {
                     val areaList = response.body()?.areas!!
+                    val areaNameList = mutableListOf<String>()
+                    areaNameList.add("Tất cả")
+                    for (area in areaList) {
+                        areaNameList.add(area.khuvuc)
+                    }
                     val spn_khuvuc_adapter = activity?.let {
-                        ArrayAdapter(it, R.layout.z_layout_spinner_item, areaList)
+                        ArrayAdapter(it, R.layout.z_layout_spinner_item, areaNameList)
                     }
                     spn_khuvuc.adapter = spn_khuvuc_adapter
                 } else {

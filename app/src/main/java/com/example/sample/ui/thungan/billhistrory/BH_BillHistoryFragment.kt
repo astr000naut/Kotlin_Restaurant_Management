@@ -33,12 +33,11 @@ class BH_BillHistoryFragment : Fragment() {
     ): View? {
         _binding = TnFragmentBillHistoryBinding.inflate(inflater, container, false)
 
-        val btn_chitietListener: (Int, Int, String, Int, String) -> Unit = {billId, tableId, createdAt, price, taoboi ->
+        val btn_chitietListener: (Int, String, String, Int, String) -> Unit = {billId, tableId, createdAt, price, taoboi ->
             val dialog = BH_BillInfoDialog(billId, tableId, createdAt, price, taoboi)
             activity?.let {
                 dialog.show(it.supportFragmentManager, "billinfodialog")
             }
-
         }
 
         val adapter = BillHistoryRecyclerViewAdapter(btn_chitietListener)

@@ -2,15 +2,12 @@ package com.example.sample.ui.thungan.billhistrory.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sample.R
 import com.example.sample.model.BP_Dish
-import com.example.sample.model.Bill
-import com.example.sample.ui.thungan.billhistrory.BH_BillInfoDialog
 
 
 class BH_BpDishRecyclerViewAdapter : ListAdapter<BP_Dish, BH_BpDishRecyclerViewAdapter.BillItemViewHolder>(

@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/ql_nav_tm_home"
-        android:name="com.example.sample.ui.quanly.tablemanage.TableManageFragment"
-        android:label="ql_fragment_table_manage"
-        tools:layout="@layout/ql_fragment_table_manage" />
+        android:name="com.example.sample.ui.quanly.tablemanage.TM_HomeFragment"
+        android:label="TM_HomeFragment"
+        tools:layout="@layout/ql_tm_fragment_home" />
 </navigation>
