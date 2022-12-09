@@ -8,73 +8,7 @@
 
 
     <EditText
-        android:id="@+id/bp_inf_edt_new_pas_re"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="856dp"
-        android:layout_marginEnd="220dp"
-        android:inputType="textPassword"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/bp_inf_edt_new_pass"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="784dp"
-        android:layout_marginEnd="220dp"
-        android:textSize="22sp"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/bp_inf_edt_old_pass"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="704dp"
-        android:layout_marginEnd="220dp"
-        android:textSize="22sp"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="880dp"
-        android:text="Nhập lại mật khẩu"
-        android:textSize="22sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="796dp"
-        android:text="Mật khẩu mới"
-        android:textSize="22sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="648dp"
-        android:text="Thay đổi mật khẩu "
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/bp_inf_edt_name"
+        android:id="@+id/pm_inf_edt_name"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="252dp"
@@ -84,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/bp_inf_edt_address"
+        android:id="@+id/pm_inf_edt_address"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="528dp"
@@ -94,7 +28,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/bp_inf_edt_email"
+        android:id="@+id/pm_inf_edt_email"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="456dp"
@@ -104,7 +38,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/bp_inf_edt_sdt"
+        android:id="@+id/pm_inf_edt_sdt"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="384dp"
@@ -114,7 +48,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/bp_inf_edt_age"
+        android:id="@+id/pm_inf_edt_age"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="316dp"
@@ -128,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="144dp"
-        android:text="Cập nhật thông tin "
+        android:text="Thông tin nhân viên"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -189,26 +123,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="716dp"
-        android:text="Mật khẩu cũ"
-        android:textSize="22sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
-        android:id="@+id/bp_inf_btn_update"
+        android:id="@+id/pm_inf_btn_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="320dp"
-        android:layout_marginBottom="108dp"
+        android:layout_marginStart="224dp"
+        android:layout_marginBottom="356dp"
         android:text="Cập nhật"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/pm_inf_btn_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="208dp"
+        android:layout_marginBottom="356dp"
+        android:text="Xóa"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

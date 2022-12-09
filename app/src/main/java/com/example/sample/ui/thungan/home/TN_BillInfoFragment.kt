@@ -34,7 +34,6 @@ class TN_BillInfoFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         mSocket = SocketHandler.getSocket()
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -105,6 +104,61 @@ class TN_BillInfoFragment : Fragment() {
             }
 
         })
+
+        mSocket.on("st_c_pv") { args ->
+            if (args[0] != null) {
+                if (billId.toString() == args[0].toString()) {
+                    getBillAllBpDishRequest.clone().enqueue(object : Callback<GetListBpDishResponse> {
+                        override fun onResponse(
+                            call: Call<GetListBpDishResponse>,
+                            response: Response<GetListBpDishResponse>
+                        ) {
+                            if (response.body()?.status.toString() == "success") {
+                                val bpdishList = response.body()?.bp_dishes
+                                if (bpdishList != null) {
+                                    Log.d("RECEIVE BPDISH", bpdishList.toString())
+                                    adapter.submitList(bpdishList)
+                                }
+                            } else {
+                                Toast.makeText(context, response.body()?.message.toString(), Toast.LENGTH_SHORT).show()
+                            }
+                        }
+
+                        override fun onFailure(call: Call<GetListBpDishResponse>, t: Throwable) {
+                            Toast.makeText(context, t.message.toString(), Toast.LENGTH_SHORT).show()
+                        }
+
+                    })
+                }
+            }
+        }
+        mSocket.on("dish_update_tn") { args ->
+            if (args[0] != null) {
+                if (args[0].toString() == tableId) {
+                    getBillAllBpDishRequest.clone().enqueue(object : Callback<GetListBpDishResponse> {
+                        override fun onResponse(
+                            call: Call<GetListBpDishResponse>,
+                            response: Response<GetListBpDishResponse>
+                        ) {
+                            if (response.body()?.status.toString() == "success") {
+                                val bpdishList = response.body()?.bp_dishes
+                                if (bpdishList != null) {
+                                    Log.d("RECEIVE BPDISH", bpdishList.toString())
+                                    adapter.submitList(bpdishList)
+                                }
+                            } else {
+                                Toast.makeText(context, response.body()?.message.toString(), Toast.LENGTH_SHORT).show()
+                            }
+                        }
+
+                        override fun onFailure(call: Call<GetListBpDishResponse>, t: Throwable) {
+                            Toast.makeText(context, t.message.toString(), Toast.LENGTH_SHORT).show()
+                        }
+
+                    })
+                }
+            }
+        }
 
         binding.btnXacnhantt.setOnClickListener {
             mSocket.emit("bill_done_tn", tableId)

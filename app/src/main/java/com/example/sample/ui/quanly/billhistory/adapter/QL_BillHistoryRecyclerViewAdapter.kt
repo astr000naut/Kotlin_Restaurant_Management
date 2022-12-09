@@ -1,4 +1,4 @@
-package com.example.sample.ui.thungan.billhistrory.adapter
+package com.example.sample.ui.quanly.billhistory.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -11,10 +11,10 @@ import com.example.sample.R
 import com.example.sample.model.Bill
 
 
-class BillHistoryRecyclerViewAdapter(
+class QL_BillHistoryRecyclerViewAdapter(
     val btn_chitietListener: (Int, String, String, Int, String) -> Unit
-) : ListAdapter<Bill, BillHistoryRecyclerViewAdapter.BillItemViewHolder>(
-    BillHistoryDiffItemCallback()
+) : ListAdapter<Bill, QL_BillHistoryRecyclerViewAdapter.BillItemViewHolder>(
+    QL_BillHistoryDiffItemCallback()
 ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)
         : BillItemViewHolder = BillItemViewHolder.inflateFrom(parent)
@@ -32,7 +32,7 @@ class BillHistoryRecyclerViewAdapter(
         companion object {
             fun inflateFrom(parent: ViewGroup): BillItemViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
-                val view = layoutInflater.inflate(R.layout.tn_bh_bill_item, parent, false) as CardView
+                val view = layoutInflater.inflate(R.layout.ql_bh_bill_item, parent, false) as CardView
                 return BillItemViewHolder(view)
             }
         }

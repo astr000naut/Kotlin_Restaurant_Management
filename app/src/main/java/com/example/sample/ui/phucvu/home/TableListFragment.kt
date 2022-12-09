@@ -80,7 +80,7 @@ class TableListFragment : Fragment() {
         val rg_trangthai = binding.rgTrangthai
         val spn_khuvuc: Spinner = binding.spnKhuvuc
         val spn_loaiban: Spinner = binding.spnLoaiban
-        val list_loaiban = arrayOf("2", "4", "6", "8", "Tất cả")
+        val list_loaiban = arrayOf("Tất cả", "2", "4", "6", "8")
         val spn_loaiban_adapter = activity?.let {
             ArrayAdapter(it, R.layout.z_layout_spinner_item, list_loaiban)
         }

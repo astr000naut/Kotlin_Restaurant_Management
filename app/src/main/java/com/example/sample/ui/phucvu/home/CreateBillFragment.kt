@@ -54,7 +54,7 @@ class CreateBillFragment : Fragment() {
         val user = SharedPrefManager.getInstance(this.requireContext()).user
         val service = RetrofitClient.retrofit.create(BillService::class.java)
         binding.createBillButton.setOnClickListener {
-            val createBillRequest = CreateBillRequest(user.id, tableId)
+            val createBillRequest = CreateBillRequest(user.ten!!, tableId)
             val createBill = service.createBill(createBillRequest)
             createBill.enqueue(object : Callback<BillResponse> {
                 override fun onResponse(

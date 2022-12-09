@@ -81,7 +81,9 @@ class CapnhatmonFragment : Fragment() {
                             updateData.type,
                             updateData.bp_dish_id,
                             updateData.soluong,
-                            updateData.ghichu)
+                            updateData.ghichu,
+                            table_id
+                        )
                         val action = CapnhatmonFragmentDirections.actionCapnhatmonFragmentToBillInfoFragment(bill_id, table_id)
                         Timer().schedule(object: TimerTask() {
                             override fun run() {
@@ -119,7 +121,8 @@ class CapnhatmonFragment : Fragment() {
                             deleteData.type,
                             deleteData.bp_dish_id,
                             deleteData.soluong,
-                            deleteData.ghichu)
+                            deleteData.ghichu,
+                            table_id)
                         val action = CapnhatmonFragmentDirections.actionCapnhatmonFragmentToBillInfoFragment(bill_id, table_id)
                         Timer().schedule(object: TimerTask() {
                             override fun run() {
