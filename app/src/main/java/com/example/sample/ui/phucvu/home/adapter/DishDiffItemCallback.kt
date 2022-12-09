@@ -1,7 +1,6 @@
 package com.example.sample.ui.phucvu.home.adapter
 
 import androidx.recyclerview.widget.DiffUtil
-import com.example.sample.model.BP_Dish
 import com.example.sample.model.Dish
 
 class DishDiffItemCallback: DiffUtil.ItemCallback<Dish>() {

@@ -8,11 +8,8 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sample.R
-import com.example.sample.model.Area
 import com.example.sample.model.Dish
-import com.example.sample.ui.quanly.dishmanage.DM_DishInfoFragmentDirections
 import com.example.sample.ui.quanly.dishmanage.DishListFragmentDirections
-import com.example.sample.ui.quanly.tablemanage.TM_AreaListDirections
 
 
 class DM_DishListRecyclerViewAdapter() : ListAdapter<Dish, DM_DishListRecyclerViewAdapter.DishItemViewHolder>(

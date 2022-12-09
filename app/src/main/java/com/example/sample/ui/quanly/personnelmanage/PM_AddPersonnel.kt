@@ -10,7 +10,6 @@ import android.widget.Toast
 import androidx.navigation.findNavController
 import com.example.sample.R
 import com.example.sample.databinding.QlPmAddpersonnelFragBinding
-import com.example.sample.databinding.QlTmAreainfoFragBinding
 import com.example.sample.model.apirequest.CreateUser
 import com.example.sample.model.apiresponse.DefaultResponse
 import com.example.sample.network.RetrofitClient

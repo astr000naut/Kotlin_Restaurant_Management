@@ -1,9 +1,6 @@
 package com.example.sample.ui.quanly.personnelmanage.adapter
 
 import androidx.recyclerview.widget.DiffUtil
-import com.example.sample.model.Area
-import com.example.sample.model.Bill
-import com.example.sample.model.Dish
 import com.example.sample.model.User
 
 class PM_PersonnelDiffItemCallback: DiffUtil.ItemCallback<User>() {

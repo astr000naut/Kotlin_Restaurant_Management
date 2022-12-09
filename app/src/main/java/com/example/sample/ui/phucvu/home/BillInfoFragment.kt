@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.findNavController
 import com.example.sample.databinding.PvFragmentBillInfoBinding
-import com.example.sample.model.Bill
 import com.example.sample.model.BillResponse
 
 import com.example.sample.model.apiresponse.GetListBpDishResponse

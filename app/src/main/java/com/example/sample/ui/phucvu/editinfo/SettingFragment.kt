@@ -1,29 +1,21 @@
 package com.example.sample.ui.phucvu.editinfo
 
-import androidx.lifecycle.ViewModelProvider
+
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.navigation.findNavController
-import com.example.sample.R
 import com.example.sample.databinding.PvFragmentSettingBinding
-import com.example.sample.databinding.TnFragmentBillHistoryBinding
-import com.example.sample.model.User
 import com.example.sample.model.apirequest.UpdateUser
-import com.example.sample.model.apiresponse.DefaultResponse
 import com.example.sample.model.apiresponse.UserListResponse
 import com.example.sample.network.RetrofitClient
 import com.example.sample.network.api.UserService
-import com.example.sample.ui.quanly.personnelmanage.PM_PersonnelInfoDirections
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import simplifiedcoding.net.kotlinretrofittutorial.storage.SharedPrefManager
-import java.util.*
 
 class SettingFragment : Fragment() {
 

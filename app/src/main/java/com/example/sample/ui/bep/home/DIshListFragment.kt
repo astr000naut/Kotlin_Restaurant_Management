@@ -12,12 +12,10 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.sample.databinding.BpFragmentDishListBinding
 
 import com.example.sample.model.BP_Dish
-import com.example.sample.model.BillResponse
 import com.example.sample.model.apiresponse.GetListBpDishResponse
 import com.example.sample.model.database.BpDishDatabase
 import com.example.sample.network.RetrofitClient
 import com.example.sample.network.SocketHandler
-import com.example.sample.network.api.BillService
 import com.example.sample.network.api.DishService
 import com.example.sample.ui.bep.home.adapter.DishListRecyclerViewAdapter
 import com.example.sample.ui.bep.home.viewmodel.DishListViewModel

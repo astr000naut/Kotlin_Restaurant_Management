@@ -6,15 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.sample.R
 import com.example.sample.databinding.QlFragmentBillHistoryBinding
-import com.example.sample.databinding.TnFragmentBillHistoryBinding
 import com.example.sample.model.BillFilterResponse
 import com.example.sample.network.RetrofitClient
 import com.example.sample.network.api.BillService
 import com.example.sample.ui.quanly.billhistory.adapter.QL_BillHistoryRecyclerViewAdapter
-import com.example.sample.ui.thungan.billhistrory.BH_BillInfoDialog
-import com.example.sample.ui.thungan.billhistrory.adapter.BillHistoryRecyclerViewAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

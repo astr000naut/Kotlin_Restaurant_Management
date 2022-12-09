@@ -6,14 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.LinearLayout
 import android.widget.Spinner
 import android.widget.Toast
 import com.example.sample.R
 import com.example.sample.databinding.PvFragmentTableListBinding
-import com.example.sample.model.BP_Dish
 import com.example.sample.model.apirequest.TableFilterRequest
 import com.example.sample.model.apiresponse.GetAllAreaResponse
 import com.example.sample.model.apiresponse.GetAllTableResponse

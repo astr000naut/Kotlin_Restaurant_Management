@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.example.sample.databinding.QlBhBillinfoDialogFragBinding
-import com.example.sample.databinding.TnBhBillinfoDialogFragBinding
 import com.example.sample.model.apiresponse.GetListBpDishResponse
 import com.example.sample.network.RetrofitClient
 import com.example.sample.network.api.BillService

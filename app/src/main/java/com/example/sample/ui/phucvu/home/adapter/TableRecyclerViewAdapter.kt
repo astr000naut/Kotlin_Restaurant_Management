@@ -11,8 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.sample.R
 import com.example.sample.model.Table
 import com.example.sample.ui.phucvu.home.TableListFragmentDirections
-import java.util.*
-
 
 class TableRecyclerViewAdapter : ListAdapter<Table, TableRecyclerViewAdapter.TableItemViewHolder>(
     TableDiffItemCallback()

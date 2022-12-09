@@ -2,7 +2,6 @@ package com.example.sample.ui.thungan.billhistrory.adapter
 
 import androidx.recyclerview.widget.DiffUtil
 import com.example.sample.model.Bill
-import com.example.sample.model.Dish
 
 class BillHistoryDiffItemCallback: DiffUtil.ItemCallback<Bill>() {
     override fun areItemsTheSame(oldItem: Bill, newItem: Bill): Boolean

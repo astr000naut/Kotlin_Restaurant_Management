@@ -7,12 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.findNavController
-import com.example.sample.R
 import com.example.sample.databinding.QlFragmentPersonnelListBinding
-import com.example.sample.model.apiresponse.GetAllAreaResponse
 import com.example.sample.model.apiresponse.UserListResponse
 import com.example.sample.network.RetrofitClient
-import com.example.sample.network.api.AreaService
 import com.example.sample.network.api.UserService
 import com.example.sample.ui.quanly.personnelmanage.adapter.PM_PersonnelListRecyclerViewAdapter
 import retrofit2.Call

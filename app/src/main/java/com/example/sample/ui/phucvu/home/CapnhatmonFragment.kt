@@ -1,8 +1,7 @@
 package com.example.sample.ui.phucvu.home
 
-import android.graphics.Paint.Cap
+
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +11,6 @@ import androidx.navigation.findNavController
 import com.example.sample.databinding.PvFragmentCapnhatmonBinding
 import com.example.sample.model.apirequest.UpdateBillBpDish
 import com.example.sample.model.apiresponse.DefaultResponse
-import com.example.sample.model.apiresponse.GetListBpDishResponse
 import com.example.sample.network.RetrofitClient
 
 

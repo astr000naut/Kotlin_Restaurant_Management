@@ -8,15 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.findNavController
-import com.example.sample.R
 import com.example.sample.databinding.QlTmAddareaFragBinding
-import com.example.sample.databinding.QlTmAreainfoFragBinding
-import com.example.sample.model.BillResponse
 import com.example.sample.model.apirequest.AddAreaRequest
 import com.example.sample.model.apiresponse.DefaultResponse
 import com.example.sample.network.RetrofitClient
 import com.example.sample.network.api.AreaService
-import com.example.sample.ui.phucvu.home.CreateBillFragmentDirections
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

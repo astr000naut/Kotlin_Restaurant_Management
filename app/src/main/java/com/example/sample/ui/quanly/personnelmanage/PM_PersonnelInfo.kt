@@ -7,16 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.findNavController
-import com.example.sample.R
 import com.example.sample.databinding.QlPmPersonnelinfoFragBinding
-import com.example.sample.model.apirequest.DeleteAreaRequest
 import com.example.sample.model.apirequest.UpdateUser
 import com.example.sample.model.apiresponse.DefaultResponse
 import com.example.sample.model.apiresponse.UserListResponse
 import com.example.sample.network.RetrofitClient
-import com.example.sample.network.api.AreaService
 import com.example.sample.network.api.UserService
-import com.example.sample.ui.quanly.tablemanage.TM_AreaInfoDirections
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.sample.R
 import com.example.sample.databinding.BpFragmentSettingBinding
 import com.example.sample.model.apirequest.UpdateUser
 import com.example.sample.model.apiresponse.UserListResponse

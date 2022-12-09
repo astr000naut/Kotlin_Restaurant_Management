@@ -7,13 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.findNavController
-import com.example.sample.R
 import com.example.sample.databinding.QlDmAdddishFragBinding
 import com.example.sample.model.apirequest.CreateDishRequest
 import com.example.sample.model.apiresponse.DefaultResponse
 import com.example.sample.network.RetrofitClient
 import com.example.sample.network.api.DishService
-import com.example.sample.ui.quanly.tablemanage.TM_AddAreaDirections
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

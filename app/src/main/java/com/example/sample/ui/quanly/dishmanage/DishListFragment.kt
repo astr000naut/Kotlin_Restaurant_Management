@@ -7,12 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.findNavController
-import com.example.sample.R
 import com.example.sample.databinding.QlDmDishlishFragBinding
-import com.example.sample.model.apiresponse.GetAllAreaResponse
 import com.example.sample.model.apiresponse.GetAllDishResponse
 import com.example.sample.network.RetrofitClient
-import com.example.sample.network.api.AreaService
 import com.example.sample.network.api.DishService
 import com.example.sample.ui.quanly.dishmanage.adapter.DM_DishListRecyclerViewAdapter
 import retrofit2.Call
