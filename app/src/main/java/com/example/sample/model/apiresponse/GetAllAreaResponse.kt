@@ -1,9 +1,9 @@
 package com.example.sample.model.apiresponse
 
-import com.example.sample.model.Table
+import com.example.sample.model.Area
 
 data class GetAllAreaResponse(
     val status: String,
     val message: String,
-    val areas: List<String>
+    val areas: List<Area>
 )

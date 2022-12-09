@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ql_dm_nav_graph"
+    app:startDestination="@id/dishListFragment">
+
+    <fragment
+        android:id="@+id/dishListFragment"
+        android:name="com.example.sample.ui.quanly.dishmanage.DishListFragment"
+        android:label="ql_fragment_dish_list"
+        tools:layout="@layout/ql_dm_dishlish_frag" >
+        <action
+            android:id="@+id/action_dishListFragment_to_DM_AddDishFragment"
+            app:destination="@id/DM_AddDishFragment" />
+        <action
+            android:id="@+id/action_dishListFragment_to_DM_DishInfoFragment"
+            app:destination="@id/DM_DishInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/DM_AddDishFragment"
+        android:name="com.example.sample.ui.quanly.dishmanage.DM_AddDishFragment"
+        android:label="ql_dm_adddish_frag"
+        tools:layout="@layout/ql_dm_adddish_frag" >
+        <action
+            android:id="@+id/action_DM_AddDishFragment_to_dishListFragment"
+            app:destination="@id/dishListFragment"
+            app:popUpTo="@id/dishListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/DM_DishInfoFragment"
+        android:name="com.example.sample.ui.quanly.dishmanage.DM_DishInfoFragment"
+        android:label="ql_dm_dishinfo_frag"
+        tools:layout="@layout/ql_dm_dishinfo_frag" >
+        <action
+            android:id="@+id/action_DM_DishInfoFragment_to_dishListFragment"
+            app:destination="@id/dishListFragment"
+            app:popUpTo="@id/dishListFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <argument
+            android:name="ten"
+            app:argType="string" />
+        <argument
+            android:name="gia"
+            app:argType="integer" />
+    </fragment>
+</navigation>

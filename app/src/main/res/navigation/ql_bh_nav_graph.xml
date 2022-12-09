@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ql_bh_nav_graph"
+    app:startDestination="@id/billHistoryFragment">
+
+    <fragment
+        android:id="@+id/billHistoryFragment"
+        android:name="com.example.sample.ui.quanly.billhistory.BillHistoryFragment"
+        android:label="ql_fragment_bill_history"
+        tools:layout="@layout/ql_fragment_bill_history" />
+</navigation>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tn_bh_nav_graph"
+    app:startDestination="@id/tn_bh_fragment">
+    <fragment
+        android:id="@+id/tn_bh_fragment"
+        android:name="com.example.sample.ui.thungan.billhistrory.BH_BillHistoryFragment"
+        android:label="tn_fragment_bill_history"
+        tools:layout="@layout/tn_fragment_bill_history" />
+</navigation>

@@ -13,6 +13,7 @@ import android.widget.Spinner
 import android.widget.Toast
 import com.example.sample.R
 import com.example.sample.databinding.PvFragmentTableListBinding
+import com.example.sample.model.BP_Dish
 import com.example.sample.model.apirequest.TableFilterRequest
 import com.example.sample.model.apiresponse.GetAllAreaResponse
 import com.example.sample.model.apiresponse.GetAllTableResponse
@@ -79,7 +80,7 @@ class TableListFragment : Fragment() {
         val rg_trangthai = binding.rgTrangthai
         val spn_khuvuc: Spinner = binding.spnKhuvuc
         val spn_loaiban: Spinner = binding.spnLoaiban
-        val list_loaiban = arrayOf("2", "4", "6", "8", "Tất cả")
+        val list_loaiban = arrayOf("Tất cả", "2", "4", "6", "8")
         val spn_loaiban_adapter = activity?.let {
             ArrayAdapter(it, R.layout.z_layout_spinner_item, list_loaiban)
         }
@@ -127,8 +128,13 @@ class TableListFragment : Fragment() {
             ) {
                 if (response.body()?.status.toString() == "success") {
                     val areaList = response.body()?.areas!!
+                    val areaNameList = mutableListOf<String>()
+                    areaNameList.add("Tất cả")
+                    for (area in areaList) {
+                        areaNameList.add(area.khuvuc)
+                    }
                     val spn_khuvuc_adapter = activity?.let {
-                        ArrayAdapter(it, R.layout.z_layout_spinner_item, areaList)
+                        ArrayAdapter(it, R.layout.z_layout_spinner_item, areaNameList)
                     }
                     spn_khuvuc.adapter = spn_khuvuc_adapter
                 } else {
@@ -156,31 +162,33 @@ class TableListFragment : Fragment() {
                 mSocket.on(Socket.EVENT_DISCONNECT) {
                     Log.d("SOCKET", "DISCONNECT TABLE LIST")
                 }
-                mSocket.on("counter") { args ->
-                    if (args[0] != null) {
-                        getAllTablesRequest.clone().enqueue(object : Callback<GetAllTableResponse> {
-                            override fun onResponse(
-                                call: Call<GetAllTableResponse>,
-                                response: Response<GetAllTableResponse>
-                            ) {
-                                if (response.body()?.status.toString() == "success") {
-                                    val tablelist = response.body()?.tables
-                                    if (tablelist != null) {
-                                        adapter.submitList(tablelist)
-                                    }
-                                } else {
-                                    Toast.makeText(context, response.body()?.message.toString(), Toast.LENGTH_SHORT).show()
-                                }
-                            }
-
-                            override fun onFailure(call: Call<GetAllTableResponse>, t: Throwable) {
-                                Toast.makeText(context, t.message.toString(), Toast.LENGTH_SHORT).show()
-                            }
-                        })
-                    }
-                }
             }
         }, 1000)
+
+        mSocket.on("bill_done_pv") { args ->
+            if (args[0] != null) {
+                getAllTablesRequest.clone().enqueue(object : Callback<GetAllTableResponse> {
+                    override fun onResponse(
+                        call: Call<GetAllTableResponse>,
+                        response: Response<GetAllTableResponse>
+                    ) {
+                        if (response.body()?.status.toString() == "success") {
+                            val tablelist = response.body()?.tables
+                            if (tablelist != null) {
+                                adapter.submitList(tablelist)
+                            }
+
+                        } else {
+                            Toast.makeText(context, response.body()?.message.toString(), Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<GetAllTableResponse>, t: Throwable) {
+                        Toast.makeText(context, t.message.toString(), Toast.LENGTH_SHORT).show()
+                    }
+                })
+            }
+        }
 
 
         return root

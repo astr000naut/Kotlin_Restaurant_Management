@@ -1,6 +1,6 @@
 package com.example.sample.model.apirequest
 
 data class CreateBillRequest(
-    val taoboi: Int,
-    val ban: Int
+    val taoboi: String,
+    val ban: String
 )

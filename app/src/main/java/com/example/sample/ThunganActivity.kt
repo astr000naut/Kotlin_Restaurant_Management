@@ -3,12 +3,63 @@ package com.example.sample
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+import com.example.sample.databinding.TnActivityThunganBinding
+import com.google.android.material.navigation.NavigationView
 import simplifiedcoding.net.kotlinretrofittutorial.storage.SharedPrefManager
 
 class ThunganActivity : AppCompatActivity() {
+
+    private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var binding: TnActivityThunganBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.tn_activity_thungan)
+
+        binding = TnActivityThunganBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        setSupportActionBar(binding.tnAppBarMain.tnToolbar)
+
+        val drawerLayout: DrawerLayout = binding.tnDrawerLayout
+        val navView: NavigationView = binding.tnNavView
+        val navController = findNavController(R.id.tn_nav_host_fragment_content_main)
+
+        appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.tn_nav_home, R.id.tn_nav_setting, R.id.tn_nav_bill_history
+            ), drawerLayout
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.tn_main, menu)
+        return true
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.logout_btn) {
+            val intent = Intent(applicationContext, LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            SharedPrefManager.getInstance(this).clear()
+            startActivity(intent)
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.tn_nav_host_fragment_content_main)
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
     override fun onStart() {

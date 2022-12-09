@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ql_mobile_navigation"
+    app:startDestination="@id/ql_nav_bh_home">
+
+    <fragment
+        android:id="@+id/ql_nav_bh_home"
+        android:name="com.example.sample.ui.quanly.billhistory.BH_HomeFragment"
+        android:label="BH_HomeFragment"
+        tools:layout="@layout/ql_bh_fragment_home"/>
+    <fragment
+        android:id="@+id/ql_nav_dm_home"
+        android:name="com.example.sample.ui.quanly.dishmanage.DM_HomeFragment"
+        android:label="DM_HomeFragment"
+        tools:layout="@layout/ql_dm_fragment_home"/>
+    <fragment
+        android:id="@+id/ql_nav_pm_home"
+        android:name="com.example.sample.ui.quanly.personnelmanage.PM_HomeFragment"
+        android:label="PM_HomeFragment"
+        tools:layout="@layout/ql_pm_fragment_home"/>
+
+    <fragment
+        android:id="@+id/ql_nav_tm_home"
+        android:name="com.example.sample.ui.quanly.tablemanage.TM_HomeFragment"
+        android:label="TM_HomeFragment"
+        tools:layout="@layout/ql_tm_fragment_home" />
+</navigation>

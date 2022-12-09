@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tn_tl_nav_graph"
+    app:startDestination="@id/tn_table_list_frag">
+    <fragment
+        android:id="@+id/tn_table_list_frag"
+        android:name="com.example.sample.ui.thungan.home.TN_TableListFragment"
+        android:label="tn_fragment_table_list"
+        tools:layout="@layout/tn_fragment_table_list" >
+        <action
+            android:id="@+id/action_tn_table_list_frag_to_tn_bill_info_frag"
+            app:destination="@id/tn_bill_info_frag" />
+    </fragment>
+    <fragment
+        android:id="@+id/tn_bill_info_frag"
+        android:name="com.example.sample.ui.thungan.home.TN_BillInfoFragment"
+        android:label="tn_fragment_bill_info"
+        tools:layout="@layout/tn_tl_fragment_bill_info" >
+        <argument android:name="bill_id"
+            app:argType="integer" />
+        <argument
+            android:name="table_id"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_tn_bill_info_frag_to_tn_table_list_frag"
+            app:destination="@id/tn_table_list_frag"
+            app:popUpTo="@id/tn_table_list_frag" />
+    </fragment>
+</navigation>

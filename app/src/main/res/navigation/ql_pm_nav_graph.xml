@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ql_pm_nav_graph"
+    app:startDestination="@id/personnelListFragment">
+
+    <fragment
+        android:id="@+id/personnelListFragment"
+        android:name="com.example.sample.ui.quanly.personnelmanage.PersonnelListFragment"
+        android:label="ql_fragment_personnel_list"
+        tools:layout="@layout/ql_fragment_personnel_list" >
+        <action
+            android:id="@+id/action_personnelListFragment_to_PM_AddPersonnel"
+            app:destination="@id/PM_AddPersonnel" />
+        <action
+            android:id="@+id/action_personnelListFragment_to_PM_PersonnelInfo"
+            app:destination="@id/PM_PersonnelInfo" />
+    </fragment>
+    <fragment
+        android:id="@+id/PM_AddPersonnel"
+        android:name="com.example.sample.ui.quanly.personnelmanage.PM_AddPersonnel"
+        android:label="ql_pm_addpersonnel_frag"
+        tools:layout="@layout/ql_pm_addpersonnel_frag" >
+        <action
+            android:id="@+id/action_PM_AddPersonnel_to_personnelListFragment"
+            app:destination="@id/personnelListFragment"
+            app:popUpTo="@id/personnelListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/PM_PersonnelInfo"
+        android:name="com.example.sample.ui.quanly.personnelmanage.PM_PersonnelInfo"
+        android:label="ql_pm_personnelinfo_frag"
+        tools:layout="@layout/ql_pm_personnelinfo_frag" >
+        <action
+            android:id="@+id/action_PM_PersonnelInfo_to_personnelListFragment"
+            app:destination="@id/personnelListFragment"
+            app:popUpTo="@id/personnelListFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="age"
+            app:argType="integer" />
+        <argument
+            android:name="sdt"
+            app:argType="string" />
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <argument
+            android:name="address"
+            app:argType="string" />
+    </fragment>
+</navigation>
