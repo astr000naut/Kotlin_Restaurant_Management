@@ -10,7 +10,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="334dp"
-        android:background="#A5C4DC"
+        android:background="@drawable/layout_bg"
+
         android:layout_margin="12dp">
 
         <TextView
@@ -19,7 +20,8 @@
             android:layout_height="35dp"
             android:layout_marginStart="44dp"
             android:layout_marginTop="40dp"
-            android:text="Số chỗ: "
+            android:textStyle="bold"
+            android:text="Số chỗ "
             android:textSize="22sp"
             app:layout_constraintStart_toStartOf="@+id/guideline9"
             app:layout_constraintTop_toBottomOf="@+id/textView25" />
@@ -33,7 +35,7 @@
 
         <RadioGroup
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
             android:id="@+id/rg_trangthai"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -49,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:text="Bàn trống"
                 android:textSize="22sp"
-
+                android:layout_marginBottom="20dp"
                 android:layoutDirection="rtl"/>
 
             <RadioButton
@@ -58,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:text="Đang phục vụ"
                 android:textSize="22sp"
-
+                android:layout_marginBottom="20dp"
                 android:layoutDirection="rtl"/>
 
             <RadioButton
@@ -82,8 +84,9 @@
             android:layout_width="wrap_content"
             android:layout_height="26dp"
             android:layout_marginStart="44dp"
-            android:layout_marginTop="28dp"
-            android:text="Khu vực: "
+            android:layout_marginTop="48dp"
+            android:text="Khu vực "
+            android:textStyle="bold"
             android:textSize="22sp"
             app:layout_constraintStart_toStartOf="@+id/guideline9"
             app:layout_constraintTop_toTopOf="@+id/guideline8" />
@@ -97,12 +100,14 @@
 
         <Button
             android:id="@+id/btn_timkiem"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="164dp"
-            android:text="Tìm kiếm"
+            android:layout_width="240dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="216dp"
+            android:text="Tìm"
+            android:drawableEnd="@android:drawable/ic_menu_search"
+            android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.475"
+            app:layout_constraintHorizontal_bias="0.471"
             app:layout_constraintStart_toStartOf="@+id/guideline9"
             app:layout_constraintTop_toTopOf="@+id/guideline8" />
 
@@ -110,7 +115,7 @@
             android:id="@+id/spn_khuvuc"
             android:layout_width="178dp"
             android:layout_height="35dp"
-            android:layout_marginTop="27dp"
+            android:layout_marginTop="45dp"
             android:layout_marginEnd="20dp"
             android:contentDescription="Khu vực: "
             app:layout_constraintEnd_toEndOf="parent"
@@ -120,11 +125,23 @@
             android:id="@+id/spn_loaiban"
             android:layout_width="174dp"
             android:layout_height="35dp"
-            android:layout_marginTop="92dp"
+            android:layout_marginTop="112dp"
             android:layout_marginEnd="20dp"
             android:contentDescription="Số chỗ: "
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline8" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="TÌM KIẾM BÀN"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView

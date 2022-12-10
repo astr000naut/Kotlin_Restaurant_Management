@@ -49,7 +49,7 @@ class CreateBillFragment : Fragment() {
 
 
         val tableId = CreateBillFragmentArgs.fromBundle(requireArguments()).tableId
-        binding.createBillTableName.text = "Bàn số: ${tableId.toString()}"
+        binding.createBillTableName.text = "Bàn số ${tableId.toString()}"
         val user = SharedPrefManager.getInstance(this.requireContext()).user
         val service = RetrofitClient.retrofit.create(BillService::class.java)
         binding.createBillButton.setOnClickListener {

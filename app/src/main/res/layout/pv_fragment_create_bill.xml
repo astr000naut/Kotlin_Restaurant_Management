@@ -11,15 +11,19 @@
         android:id="@+id/create_bill_table_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="22sp"
+        android:textSize="36sp"
         android:text="Bàn số: 1"
-        android:layout_marginTop="200dp"
+        android:textStyle="bold"
+        android:layout_marginTop="400dp"
         android:layout_gravity="center"/>
+
     <Button
         android:id="@+id/create_bill_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tạo đơn"
-        android:layout_gravity="center"/>
+        android:layout_width="200dp"
+        android:layout_marginTop="100dp"
+        android:layout_height="80dp"
+        android:textSize="22sp"
+        android:layout_gravity="center"
+        android:text="Tạo đơn" />
 
 </LinearLayout>

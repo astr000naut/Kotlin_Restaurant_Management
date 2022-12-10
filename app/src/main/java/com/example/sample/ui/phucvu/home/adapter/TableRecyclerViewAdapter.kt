@@ -38,14 +38,14 @@ class TableRecyclerViewAdapter : ListAdapter<Table, TableRecyclerViewAdapter.Tab
             }
         }
         fun bind(item: Table) {
-            table_name.text = "Bàn số: " + item.id.toString()
+            table_name.text = "Bàn số: " + item.id
             table_size.text = "Số chỗ ngồi: " + item.socho.toString()
             if (item.hoadonht == -1) {
-                table_status.text = "Trạng thái: Trống"
-                rootView.setCardBackgroundColor(Color.GREEN)
+                table_status.text = "Trống"
+                rootView.setCardBackgroundColor(Color.rgb(84, 196, 86))
             } else {
-                table_status.text = "Trạng thái: Đang phục vụ"
-                rootView.setCardBackgroundColor(Color.YELLOW)
+                table_status.text = "Đang phục vụ"
+                rootView.setCardBackgroundColor(Color.rgb(222, 188, 35))
             }
             rootView.setOnClickListener{
                 if (item.hoadonht == -1) {

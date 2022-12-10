@@ -42,10 +42,10 @@ class TN_TableRecyclerViewAdapter : ListAdapter<Table, TN_TableRecyclerViewAdapt
             table_name.text = "Bàn số: " + item.id.toString()
             table_size.text = "Số chỗ ngồi: " + item.socho.toString()
             if (item.hoadonht == -1) {
-                table_status.text = "Trạng thái: Trống"
+                table_status.text = "Trống"
                 rootView.setCardBackgroundColor(Color.GREEN)
             } else {
-                table_status.text = "Trạng thái: Đang phục vụ"
+                table_status.text = "Đang phục vụ"
                 rootView.setCardBackgroundColor(Color.YELLOW)
             }
             rootView.setOnClickListener{

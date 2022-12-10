@@ -50,14 +50,14 @@ class BillInfoRecyclerViewAdapter : ListAdapter<BP_Dish, BillInfoRecyclerViewAda
             tv_trangthai.text = item.trangthai
             when (item.trangthai.toString()) {
                 "Đang làm" -> {
-                    layout.setBackgroundColor(Color.TRANSPARENT)
+                    layout.setBackgroundColor(Color.rgb(218, 230, 222))
                     btn_capnhat.visibility = View.INVISIBLE
                 }
                 "Đã xong" -> {
-                    layout.setBackgroundColor(Color.GREEN)
+                    layout.setBackgroundColor(Color.rgb(84, 196, 86))
                     btn_capnhat.visibility = View.INVISIBLE
                 }
-                "Chưa làm" -> layout.setBackgroundColor(Color.YELLOW)
+                "Chưa làm" -> layout.setBackgroundColor(Color.rgb(222, 188, 35))
             }
             btn_capnhat.setOnClickListener {
                 val action = BillInfoFragmentDirections.actionBillInfoFragmentToCapnhatmonFragment(

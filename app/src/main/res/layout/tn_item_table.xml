@@ -15,18 +15,21 @@
             android:id="@+id/table_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:textSize="20sp"
             android:padding="8dp"/>
         <TextView
             android:id="@+id/table_size"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:textSize="20sp"
             android:padding="8dp"/>
         <TextView
             android:id="@+id/table_status"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:textSize="20sp"
             android:padding="8dp"/>
 

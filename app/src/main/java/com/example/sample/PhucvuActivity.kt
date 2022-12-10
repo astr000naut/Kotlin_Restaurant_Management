@@ -25,7 +25,6 @@ class PhucvuActivity : AppCompatActivity() {
 
         binding = PvActivityPhucvuBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         setSupportActionBar(binding.appBarMain.toolbar)
 
 

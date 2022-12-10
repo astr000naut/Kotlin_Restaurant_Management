@@ -4,16 +4,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#93CACC"
     android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/tv_capnhatmon_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="168dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="152dp"
         android:text="Cập nhật món ăn"
-        android:textSize="22sp"
+        android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,8 +25,9 @@
         android:id="@+id/tv_tenmon_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="264dp"
+        android:layout_marginTop="260dp"
         android:text="Tên món: "
+        android:textStyle="bold"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.125"
@@ -33,8 +38,9 @@
         android:id="@+id/tv_soluong_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="344dp"
+        android:layout_marginTop="338dp"
         android:text="Số lượng:"
+        android:textStyle="bold"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.124"
@@ -45,93 +51,73 @@
         android:id="@+id/tv_ghichu_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="468dp"
+        android:layout_marginTop="500dp"
         android:text="Ghi chú:"
+        android:textStyle="bold"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.122"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TableLayout
-        android:id="@+id/tableLayout"
-        android:layout_width="320dp"
+
+    <TextView
+        android:id="@+id/tv_tenmon"
+        android:layout_width="360dp"
         android:layout_height="50dp"
-        android:layout_marginTop="250dp"
-        android:background="#85A7AC"
+        android:layout_marginStart="248dp"
+        android:layout_marginTop="252dp"
         android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/tv_tenmon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="22sp" />
-    </TableLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
-    <TableLayout
-        android:id="@+id/tableLayout2"
-        android:layout_width="320dp"
+    <EditText
+        android:id="@+id/edt_soluong"
+        android:layout_width="360dp"
         android:layout_height="50dp"
-        android:layout_marginTop="330dp"
-        android:background="#85A7AC"
+        android:layout_marginStart="248dp"
+        android:layout_marginTop="322dp"
         android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:inputType="number"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/edt_soluong"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:inputType="number"
-            android:textSize="22sp" />
-    </TableLayout>
-
-    <TableLayout
-        android:layout_width="320dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="450dp"
-        android:background="#85A7AC"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
+    <EditText
+        android:id="@+id/edt_ghichu"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="248dp"
+        android:layout_marginTop="484dp"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <EditText
-            android:id="@+id/edt_ghichu"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="22sp" />
-    </TableLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_capnhat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="668dp"
+        android:layout_width="240dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="692dp"
         android:text="Cập nhật"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.651"
+        app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_huymon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="668dp"
+        android:layout_width="240dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="692dp"
         android:text="Hủy món"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.344"
+        app:layout_constraintHorizontal_bias="0.883"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

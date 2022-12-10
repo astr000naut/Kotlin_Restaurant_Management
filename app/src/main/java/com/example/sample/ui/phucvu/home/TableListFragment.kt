@@ -49,7 +49,6 @@ class TableListFragment : Fragment() {
         val root: View = binding.root
         val adapter = TableRecyclerViewAdapter()
         _binding!!.pvRecyclerview.adapter = adapter
-
         // Call API to get all table
         val service = RetrofitClient.retrofit.create(TableService::class.java)
         val getAllTablesRequest = service.getAllTables()
