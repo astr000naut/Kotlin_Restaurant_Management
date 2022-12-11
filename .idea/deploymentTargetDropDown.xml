@@ -7,11 +7,11 @@
         <deviceKey>
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="$USER_HOME$/.android/avd/fire_hd_1.avd" />
+            <value value="$USER_HOME$/.android/avd/fire_hd_3.avd" />
           </Key>
         </deviceKey>
       </Target>
     </runningDeviceTargetSelectedWithDropDown>
-    <timeTargetWasSelectedWithDropDown value="2022-12-11T12:01:11.953475Z" />
+    <timeTargetWasSelectedWithDropDown value="2022-12-11T12:24:21.491348Z" />
   </component>
 </project>

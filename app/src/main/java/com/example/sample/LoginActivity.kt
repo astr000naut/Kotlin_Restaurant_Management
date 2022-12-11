@@ -3,6 +3,7 @@ package com.example.sample
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.example.sample.databinding.LiActivityLoginBinding
 import com.example.sample.model.apirequest.LoginRequest
@@ -44,7 +45,7 @@ class LoginActivity : AppCompatActivity() {
                     call: Call<LoginResponse>,
                     response: Response<LoginResponse>
                 ) {
-                    if (response.body()?.message.toString() == "Login success") {
+                    if (response.body()?.status.toString() == "success") {
                         val user = response.body()?.user!!
                         SharedPrefManager.getInstance(applicationContext).saveUser(user)
                         var intent = Intent(applicationContext, PhucvuActivity::class.java)
