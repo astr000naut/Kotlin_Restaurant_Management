@@ -184,6 +184,7 @@ class TN_TableListFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         mSocket.disconnect()
+        mSocket.off("tn_tl_bill_created")
         _binding = null
     }
 }

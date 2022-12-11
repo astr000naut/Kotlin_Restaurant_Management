@@ -137,6 +137,7 @@ class DIshListFragment : Fragment() {
         super.onDestroyView()
         mSocket.disconnect()
         mSocket.off("dish_list_bep")
+        mSocket.off("dish_update_bep")
         Log.d("DISHLIST", "DESTROYED")
         _binding = null
     }

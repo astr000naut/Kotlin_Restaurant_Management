@@ -11,7 +11,7 @@
             android:title="Quản lý thanh toán" />
         <item
             android:id="@+id/tn_nav_bill_history"
-            android:icon="@drawable/home"
+            android:icon="@drawable/cash"
             android:title="Lịch sử thanh toán" />
         <item
             android:id="@+id/tn_nav_setting"

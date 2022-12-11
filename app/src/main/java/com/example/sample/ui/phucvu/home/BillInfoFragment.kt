@@ -49,15 +49,6 @@ class BillInfoFragment : Fragment() {
         Timer().schedule(object: TimerTask() {
             override fun run() {
                 mSocket.connect()
-                mSocket.on(Socket.EVENT_CONNECT) {
-                    Log.d("SOCKET", "CONNECTED BILLINFO")
-                }
-                mSocket.on(Socket.EVENT_CONNECT_ERROR) {
-                    Log.d("SOCKET", "CONNECT ERROR BILLINFO")
-                }
-                mSocket.on(Socket.EVENT_DISCONNECT) {
-                    Log.d("SOCKET", "DISCONNECT BILLINFO")
-                }
             }
         }, 1000)
         binding.themmonBtn.setOnClickListener {
@@ -171,9 +162,7 @@ class BillInfoFragment : Fragment() {
         super.onDestroyView()
         mSocket.disconnect()
         mSocket.off("st_c_pv")
-        mSocket.off(Socket.EVENT_CONNECT)
-        mSocket.off(Socket.EVENT_DISCONNECT)
-        mSocket.off(Socket.EVENT_CONNECT_ERROR)
+        mSocket.off("bill_done_pv")
         _binding = null
     }
 }

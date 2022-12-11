@@ -149,15 +149,6 @@ class TableListFragment : Fragment() {
         Timer().schedule(object: TimerTask() {
             override fun run() {
                 mSocket.connect()
-                mSocket.on(Socket.EVENT_CONNECT) {
-                    Log.d("SOCKET", "CONNECTED TABLE LIST")
-                }
-                mSocket.on(Socket.EVENT_CONNECT_ERROR) {
-                    Log.d("SOCKET", "CONNECT ERROR TABLE LIST")
-                }
-                mSocket.on(Socket.EVENT_DISCONNECT) {
-                    Log.d("SOCKET", "DISCONNECT TABLE LIST")
-                }
             }
         }, 1000)
 
@@ -193,10 +184,8 @@ class TableListFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         mSocket.disconnect()
-        mSocket.off("counter")
-        mSocket.off(Socket.EVENT_CONNECT)
-        mSocket.off(Socket.EVENT_DISCONNECT)
-        mSocket.off(Socket.EVENT_CONNECT_ERROR)
+        mSocket.off("bill_done_pv")
+
         Log.d("TABLELIST", "DESTROYED")
         _binding = null
     }

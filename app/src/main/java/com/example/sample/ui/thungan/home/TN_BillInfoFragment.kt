@@ -156,6 +156,34 @@ class TN_BillInfoFragment : Fragment() {
                 }
             }
         }
+        mSocket.on("bill_add_dish_tn") { args ->
+            if (args[0] != null) {
+                Log.d("BILL ADD DISH", args[0].toString())
+                if (args[0].toString() == tableId) {
+                    getBillAllBpDishRequest.clone().enqueue(object : Callback<GetListBpDishResponse> {
+                        override fun onResponse(
+                            call: Call<GetListBpDishResponse>,
+                            response: Response<GetListBpDishResponse>
+                        ) {
+                            if (response.body()?.status.toString() == "success") {
+                                val bpdishList = response.body()?.bp_dishes
+                                if (bpdishList != null) {
+                                    Log.d("RECEIVE BPDISH", bpdishList.toString())
+                                    adapter.submitList(bpdishList)
+                                }
+                            } else {
+                                Toast.makeText(context, response.body()?.message.toString(), Toast.LENGTH_SHORT).show()
+                            }
+                        }
+
+                        override fun onFailure(call: Call<GetListBpDishResponse>, t: Throwable) {
+                            Toast.makeText(context, t.message.toString(), Toast.LENGTH_SHORT).show()
+                        }
+
+                    })
+                }
+            }
+        }
 
         binding.btnXacnhantt.setOnClickListener {
             mSocket.emit("bill_done_tn", tableId)
@@ -181,6 +209,10 @@ class TN_BillInfoFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         mSocket.disconnect()
+        mSocket.off("dish_update_tn")
+        mSocket.off("st_c_pv")
+        mSocket.off("dish_update_tn")
+        mSocket.off("bill_add_dish_tn")
         _binding = null
     }
 }

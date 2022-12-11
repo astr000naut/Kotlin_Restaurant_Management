@@ -52,15 +52,6 @@ class ThemmonFragment : Fragment() {
         Timer().schedule(object: TimerTask() {
             override fun run() {
                 mSocket.connect()
-                mSocket.on(Socket.EVENT_CONNECT) {
-                    Log.d("SOCKET", "CONNECTED THEM MON")
-                }
-                mSocket.on(Socket.EVENT_CONNECT_ERROR) {
-                    Log.d("SOCKET", "CONNECT ERROR THEM MON")
-                }
-                mSocket.on(Socket.EVENT_DISCONNECT) {
-                    Log.d("SOCKET", "DISCONNECT THEM MON")
-                }
             }
         }, 1000)
 
@@ -130,7 +121,7 @@ class ThemmonFragment : Fragment() {
                                 billId = bill_id
                             ))
                         Log.d("DISH LIST RETURN", bpDishListCreated.toString())
-                        mSocket.emit("dish_list_pv", gson.toJson(bpDishListCreated))
+                        mSocket.emit("dish_list_pv", gson.toJson(bpDishListCreated), table_id)
 
                         val action = ThemmonFragmentDirections.actionThemmonFragmentToBillInfoFragment(bill_id, table_id)
                         Timer().schedule(object: TimerTask() {
@@ -158,9 +149,6 @@ class ThemmonFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         mSocket.disconnect()
-        mSocket.off(Socket.EVENT_CONNECT)
-        mSocket.off(Socket.EVENT_DISCONNECT)
-        mSocket.off(Socket.EVENT_CONNECT_ERROR)
         Log.d("THEMMON", "DESTROYED")
         _binding = null
     }
