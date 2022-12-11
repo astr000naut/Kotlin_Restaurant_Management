@@ -7,6 +7,6 @@
     <fragment
         android:id="@+id/tn_bh_fragment"
         android:name="com.example.sample.ui.thungan.billhistrory.BH_BillHistoryFragment"
-        android:label="tn_fragment_bill_history"
+        android:label="Lịch sử thanh toán"
         tools:layout="@layout/tn_fragment_bill_history" />
 </navigation>

@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.navigation.findNavController
 import com.example.sample.databinding.PvFragmentBillInfoBinding
 import com.example.sample.model.BillResponse
+import com.example.sample.model.apiresponse.GetAllTableResponse
 
 import com.example.sample.model.apiresponse.GetListBpDishResponse
 import com.example.sample.network.api.BillService
@@ -82,7 +83,7 @@ class BillInfoFragment : Fragment() {
                         binding.tvTenban.text = "Hóa đơn bàn số " + tableId
                         binding.tvNgaytao.text = "Ngày tạo: " + bill?.createdAt
                         binding.tvTaoboi.text = "Tạo bởi: " + bill?.taoboi
-                        binding.tvGia.text = "Giá tiền: " + (bill?.gia ?:0) + " VNĐ"
+                        binding.tvGia.text = "Tổng thanh toán: " + (bill?.gia ?:0) + "đ"
                     } else {
                         Toast.makeText(context, response.body()?.message.toString(), Toast.LENGTH_SHORT).show()
                     }
@@ -143,6 +144,21 @@ class BillInfoFragment : Fragment() {
                         }
 
                     })
+                }
+            }
+        }
+        mSocket.on("bill_done_pv") { args ->
+            if (args[0] != null) {
+                val args_tableId = args[0]
+                if (tableId == args_tableId) {
+                    Timer().schedule(object: TimerTask() {
+                        override fun run() {
+                            activity?.runOnUiThread{
+                                val action = BillInfoFragmentDirections.actionBillInfoFragmentToTableListFragment()
+                                binding.root.findNavController().navigate(action)
+                            }
+                        }
+                    }, 500)
                 }
             }
         }

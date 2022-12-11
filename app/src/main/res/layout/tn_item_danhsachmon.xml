@@ -8,10 +8,11 @@
     android:layout_margin="8dp"
     app:cardElevation="4dp"
     app:cardCornerRadius="4dp">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/card_constrain"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="110dp"
         android:background="#7EBDE8">
 
         <TextView
@@ -19,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="20dp"
             android:text="Mực trứng hấp bia"
             android:textSize="22sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
-            android:layout_marginTop="76dp"
+            android:layout_marginTop="70dp"
             android:text="Ghi chú:"
             android:textSize="22sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,23 +41,22 @@
             android:id="@+id/tv_soluong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="368dp"
+            android:layout_marginStart="320dp"
+            android:layout_marginTop="28dp"
             android:text="SL: 1"
             android:textSize="22sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.233" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_gia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="450dp"
             android:layout_marginTop="28dp"
-            android:layout_marginEnd="72dp"
             android:text="Giá: 250000"
             android:textSize="22sp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView

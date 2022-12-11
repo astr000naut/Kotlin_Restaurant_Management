@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="640dp"
         android:layout_height="1000dp"
-        android:background="#1D90EC"
+        android:background="@drawable/layout_bg"
         app:circularflow_radiusInDP="10dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,7 +20,9 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="240dp">
+            android:layout_height="240dp"
+            android:background="#91E381"
+            android:layout_margin="8dp">
 
             <TextView
                 android:id="@+id/textView6"
@@ -29,6 +31,7 @@
                 android:layout_marginTop="4dp"
                 android:text="Thông tin hóa đơn"
                 android:textSize="22sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -40,7 +43,8 @@
                 android:layout_marginStart="76dp"
                 android:layout_marginTop="56dp"
                 android:text="Bàn số: 1"
-                android:textSize="22sp"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,21 +52,23 @@
                 android:id="@+id/tv_bh_bi_createdAt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="36dp"
-                android:layout_marginBottom="60dp"
+                android:layout_marginStart="76dp"
+                android:layout_marginBottom="54dp"
                 android:text="Ngày tạo: 2022-11-28T14:05:20"
-                android:textSize="22sp"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/tv_bh_bi_taoboi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="76dp"
-                android:layout_marginTop="104dp"
-                android:text="Nhân viên: Trần Văn Quang"
-                android:textSize="22sp"
+                android:layout_marginStart="356dp"
+                android:layout_marginTop="56dp"
+                android:text="Tạo bởi: A"
+                android:textSize="20dp"
+                android:textAppearance="@style/TextAppearance.AppCompat"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -71,29 +77,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="76dp"
-                android:layout_marginBottom="60dp"
+                android:layout_marginBottom="104dp"
                 android:text="Giá: 500000"
-                android:textSize="22sp"
+                android:textSize="20sp"
+                android:textAppearance="@style/TextAppearance.AppCompat"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:text="Danh sách món"
-                android:textSize="22sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.501"
                 app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Danh sách món"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/tn_bh_billinfo_dialog_rv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#BDBDBD"
+            android:layout_margin="8dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
     </LinearLayout>
 

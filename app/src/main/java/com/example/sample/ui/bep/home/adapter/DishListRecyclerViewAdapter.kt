@@ -45,7 +45,7 @@ class DishListRecyclerViewAdapter (
                  dagiaoListener: (BP_Dish) -> Unit,
                  batdaulamListener: (BP_Dish) -> Unit
         ) {
-            tv_tenmon.text = item.ten
+            tv_tenmon.text = "Tên món: " + item.ten
             tv_ghichu.text = if (item.ghichu != null) item.ghichu else ""
             tv_soluong.text = "SL: " + item.soluong.toString()
             tv_tenban.text = "Bàn số: " + item.ban.toString()
@@ -55,12 +55,16 @@ class DishListRecyclerViewAdapter (
                 btn_batdaulam.text = "Đang làm"
                 btn_batdaulam.isEnabled = false
                 btn_batdaulam.isClickable = false
-                btn_batdaulam.setBackgroundColor(Color.YELLOW)
+                btn_dagiao.isEnabled = true
+                btn_dagiao.isClickable = true
+                btn_batdaulam.setBackgroundColor(Color.rgb(218, 230, 222))
             } else {
                 btn_batdaulam.text = "Bắt đầu làm"
                 btn_batdaulam.isEnabled = true
                 btn_batdaulam.isClickable = true
-                btn_batdaulam.setBackgroundColor(Color.CYAN)
+                btn_dagiao.isEnabled = false
+                btn_dagiao.isClickable = false
+                btn_batdaulam.setBackgroundColor(Color.rgb(17, 158, 214))
             }
             btn_batdaulam.setOnClickListener {
                 batdaulamListener(item)

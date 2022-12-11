@@ -65,6 +65,15 @@ class BillHistoryFragment : Fragment() {
                 ) {
                     if (response.body()?.status.toString() == "success") {
                         val billList = response.body()?.bills
+                        var tong_thu = 0
+                        if (billList?.size!! > 0) {
+                            billList?.forEach{bill ->
+                                tong_thu += bill.gia!!
+                            }
+                            binding.tongThu.text = "Tổng thu: " + tong_thu.toString() + "đ"
+                        } else {
+                            binding.tongThu.text = "Không có hóa đơn"
+                        }
                         if (billList != null) {
                             adapter.submitList(billList)
                         }

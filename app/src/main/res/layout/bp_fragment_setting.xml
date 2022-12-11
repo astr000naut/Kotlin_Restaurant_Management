@@ -3,13 +3,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#93CACC"
+    android:layout_margin="10dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
     <EditText
         android:id="@+id/bp_inf_edt_new_pas_re"
-        android:layout_width="300dp"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="864dp"
         android:layout_marginEnd="148dp"
@@ -20,7 +22,7 @@
 
     <EditText
         android:id="@+id/bp_inf_edt_new_pass"
-        android:layout_width="300dp"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="784dp"
         android:layout_marginEnd="150dp"
@@ -31,7 +33,7 @@
 
     <EditText
         android:id="@+id/bp_inf_edt_old_pass"
-        android:layout_width="300dp"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="704dp"
         android:layout_marginEnd="150dp"
@@ -47,6 +49,7 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="880dp"
         android:text="Nhập lại mật khẩu"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -58,6 +61,7 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="796dp"
         android:text="Mật khẩu mới"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -68,57 +72,58 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="648dp"
         android:text="Thay đổi mật khẩu "
-        android:textSize="22sp"
+        android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/bp_inf_edt_name"
-        android:layout_width="300dp"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="252dp"
-        android:layout_marginEnd="180dp"
+        android:layout_marginEnd="150dp"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/bp_inf_edt_address"
-        android:layout_width="300dp"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="528dp"
-        android:layout_marginEnd="180dp"
+        android:layout_marginEnd="150dp"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/bp_inf_edt_email"
-        android:layout_width="300dp"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="456dp"
-        android:layout_marginEnd="180dp"
+        android:layout_marginEnd="150dp"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/bp_inf_edt_sdt"
-        android:layout_width="300dp"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="384dp"
-        android:layout_marginEnd="180dp"
+        android:layout_marginEnd="150dp"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/bp_inf_edt_age"
-        android:layout_width="300dp"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="316dp"
-        android:layout_marginEnd="180dp"
+        android:layout_marginEnd="150dp"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -129,7 +134,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="144dp"
         android:text="Cập nhật thông tin "
-        android:textSize="22sp"
+        android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -141,6 +147,7 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="268dp"
         android:text="Họ và tên"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -152,6 +159,7 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="340dp"
         android:text="Tuổi"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -163,6 +171,7 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="408dp"
         android:text="SĐT"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -174,6 +183,7 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="480dp"
         android:text="Địa chỉ email"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -185,6 +195,7 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="552dp"
         android:text="Nơi ở hiện tại"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -196,6 +207,7 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="716dp"
         android:text="Mật khẩu cũ"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

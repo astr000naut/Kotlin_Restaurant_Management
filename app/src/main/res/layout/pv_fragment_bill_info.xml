@@ -2,14 +2,13 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="334dp"
+        android:layout_height="304dp"
         android:background="@drawable/layout_bg"
         android:layout_margin="12dp">
 
@@ -59,23 +58,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView30"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="268dp"
-            android:text="Danh sách món ăn"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <Button
             android:id="@+id/themmon_btn"
             android:layout_width="280dp"
             android:layout_height="80dp"
-            android:layout_marginTop="240dp"
+            android:layout_marginTop="200dp"
             android:layout_marginEnd="50dp"
             android:text="Thêm món"
             android:textSize="22sp"
@@ -89,11 +76,18 @@
             android:layout_marginStart="64dp"
             android:layout_marginTop="210dp"
             android:text="Giá: 1500000"
-            android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="22sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Danh sách món ăn"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/bill_info_recyclerview"

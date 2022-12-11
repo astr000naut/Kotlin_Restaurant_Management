@@ -1,6 +1,8 @@
 package com.example.sample.ui.thungan.home.adapter
 
+import android.graphics.Color
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.cardview.widget.CardView
@@ -32,7 +34,7 @@ class TN_BillInfoRecyclerViewAdapter : ListAdapter<BP_Dish, TN_BillInfoRecyclerV
         companion object {
             fun inflateFrom(parent: ViewGroup): BillItemViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
-                val view = layoutInflater.inflate(R.layout.tn_item_danhsachmon, parent, false) as CardView
+                val view = layoutInflater.inflate(R.layout.tn_item_danhsachmon_bi, parent, false) as CardView
                 return BillItemViewHolder(view)
             }
         }
@@ -42,6 +44,15 @@ class TN_BillInfoRecyclerViewAdapter : ListAdapter<BP_Dish, TN_BillInfoRecyclerV
             tv_soluong.text = "SL: " + item.soluong.toString()
             tv_gia.text = "Giá: " + item.gia.toString()
             tv_trangthai.text = item.trangthai
+            when (item.trangthai.toString()) {
+                "Đang làm" -> {
+                    layout.setBackgroundColor(Color.rgb(218, 230, 222))
+                }
+                "Đã xong" -> {
+                    layout.setBackgroundColor(Color.rgb(84, 196, 86))
+                }
+                "Chưa làm" -> layout.setBackgroundColor(Color.rgb(222, 188, 35))
+            }
         }
     }
 

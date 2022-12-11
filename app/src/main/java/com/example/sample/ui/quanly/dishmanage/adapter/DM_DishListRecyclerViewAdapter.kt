@@ -34,8 +34,8 @@ class DM_DishListRecyclerViewAdapter() : ListAdapter<Dish, DM_DishListRecyclerVi
             }
         }
         fun bind(item: Dish) {
-            tv_dm_tenmon.text = item.ten
-            tv_dm_giamon.text = item.gia.toString()
+            tv_dm_tenmon.text = "Tên món: " + item.ten
+            tv_dm_giamon.text = "Giá: " + item.gia.toString() + "đ"
             rootView.setOnClickListener{
                 val action = DishListFragmentDirections.actionDishListFragmentToDMDishInfoFragment(item.id, item.ten, item.gia)
                 rootView.findNavController().navigate(action)

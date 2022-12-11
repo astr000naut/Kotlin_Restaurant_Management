@@ -7,16 +7,16 @@
     <fragment
         android:id="@+id/tn_nav_home"
         android:name="com.example.sample.ui.thungan.home.TN_HomeFragment"
-        android:label="@string/menu_home"
+        android:label="Quản lý thanh toán"
         tools:layout="@layout/tn_fragment_home" />
     <fragment
         android:id="@+id/tn_nav_setting"
         android:name="com.example.sample.ui.thungan.editinfo.SettingFragment"
-        android:label="tn_fragment_setting"
+        android:label="Cập nhật thông tin"
         tools:layout="@layout/tn_fragment_setting"/>
     <fragment
         android:id="@+id/tn_nav_bill_history"
         android:name="com.example.sample.ui.thungan.billhistrory.BH_BillHistoryFragment"
-        android:label="tn_fragment_bill_history"
+        android:label="Lịch sử thanh toán"
         tools:layout="@layout/tn_fragment_bill_history" />
 </navigation>

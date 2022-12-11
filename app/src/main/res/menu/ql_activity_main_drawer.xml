@@ -7,10 +7,10 @@
         <item
             android:id="@+id/ql_nav_bh_home"
             android:icon="@drawable/home"
-            android:title="Lịch sử hóa đơn" />
+            android:title="Quản lý thanh toán" />
         <item
             android:id="@+id/ql_nav_dm_home"
-            android:icon="@drawable/user"
+            android:icon="@drawable/meal_icon"
             android:title="Quản lý món ăn" />
         <item
             android:id="@+id/ql_nav_pm_home"
@@ -18,7 +18,7 @@
             android:title="Quản lý nhân viên" />
         <item
             android:id="@+id/ql_nav_tm_home"
-            android:icon="@drawable/user"
+            android:icon="@drawable/table_icon"
             android:title="Quản lý bàn ăn" />
     </group>
 </menu>

@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="132dp"
         android:text="Thông tin món ăn"
-        android:textSize="22sp"
+        android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,10 +23,11 @@
         android:id="@+id/tv_dm_addish_ten"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
         android:layout_marginTop="244dp"
         android:text="Tên món:  "
+        android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,11 +35,12 @@
         android:id="@+id/tv_dm_addish_gia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
         android:layout_marginTop="316dp"
-        android:text="Giá: "
         android:inputType="number"
+        android:text="Giá: "
+        android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,8 +48,8 @@
 
     <Button
         android:id="@+id/btn_dm_deletedish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
         android:layout_marginBottom="576dp"
         android:text="Xóa món"
         android:textSize="22sp"

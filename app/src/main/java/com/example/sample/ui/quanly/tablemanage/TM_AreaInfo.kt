@@ -43,9 +43,9 @@ class TM_AreaInfo : Fragment() {
         val slb8 = TM_AreaInfoArgs.fromBundle(requireArguments()).slb8
         binding.tvAreaname.text = "Tên khu vực: " + areaName
         binding.tvSlb2.text = "Số lượng bàn 2 chỗ: " + slb2.toString()
-        binding.tvSlb4.text = "Số lượng bàn 2 chỗ: " + slb4.toString()
-        binding.tvSlb6.text = "Số lượng bàn 2 chỗ: " + slb6.toString()
-        binding.tvSlb8.text = "Số lượng bàn 2 chỗ: " + slb8.toString()
+        binding.tvSlb4.text = "Số lượng bàn 4 chỗ: " + slb4.toString()
+        binding.tvSlb6.text = "Số lượng bàn 6 chỗ: " + slb6.toString()
+        binding.tvSlb8.text = "Số lượng bàn 8 chỗ: " + slb8.toString()
 
         val areaService = RetrofitClient.retrofit.create(AreaService::class.java)
         val deleteAreaRequest = areaService.deleteArea(DeleteAreaRequest(areaName))

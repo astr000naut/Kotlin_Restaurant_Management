@@ -63,10 +63,10 @@ class TN_BillInfoFragment : Fragment() {
                 ) {
                     if (response.body()?.status.toString() == "success") {
                         val bill = response.body()?.bill
-                        binding.tvTenban.text = "Bàn số: " + bill?.id
+                        binding.tvTenban.text = "Hóa đơn bàn số " + bill?.ban
                         binding.tvNgaytao.text = "Ngày tạo: " + bill?.createdAt
                         binding.tvTaoboi.text = "Tạo bởi: " + bill?.taoboi
-                        binding.tvGia.text = "Giá: " + (bill?.gia ?:0)
+                        binding.tvGia.text = "Tổng thanh toán: " + (bill?.gia ?:0) + "đ"
                     } else {
                         Toast.makeText(context, response.body()?.message.toString(), Toast.LENGTH_SHORT).show()
                     }
