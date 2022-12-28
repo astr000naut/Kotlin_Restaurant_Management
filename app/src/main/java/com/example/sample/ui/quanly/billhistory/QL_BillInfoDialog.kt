@@ -33,7 +33,7 @@ class QL_BillInfoDialog(val billId: Int, val banId: String, val createdAt: Strin
 
         binding.tvBhBiTenban.text = "Bàn: " + banId
         binding.tvBhBiTaoboi.text = "Tạo bởi: " + taoboi
-        binding.tvBhBiGia.text = "Giá: " + price
+        binding.tvBhBiGia.text = "Giá: " + price + "đ"
         binding.tvBhBiCreatedAt.text = "Ngày tạo: " + createdAt
 
         val service = RetrofitClient.retrofit.create(BillService::class.java)

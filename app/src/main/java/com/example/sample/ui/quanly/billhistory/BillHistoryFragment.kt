@@ -70,7 +70,7 @@ class BillHistoryFragment : Fragment() {
                             billList?.forEach{bill ->
                                 tong_thu += bill.gia!!
                             }
-                            binding.tongThu.text = "Tổng thu: " + tong_thu.toString() + "đ"
+                            binding.tongThu.text = "Doanh thu: " + tong_thu.toString() + "đ"
                         } else {
                             binding.tongThu.text = "Không có hóa đơn"
                         }

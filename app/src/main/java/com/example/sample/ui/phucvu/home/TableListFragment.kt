@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.navigation.findNavController
 import com.example.sample.R
 import com.example.sample.databinding.PvFragmentTableListBinding
 import com.example.sample.model.apirequest.TableFilterRequest
@@ -49,6 +50,12 @@ class TableListFragment : Fragment() {
         val root: View = binding.root
         val adapter = TableRecyclerViewAdapter()
         _binding!!.pvRecyclerview.adapter = adapter
+        // Socket
+        Timer().schedule(object: TimerTask() {
+            override fun run() {
+                mSocket.connect()
+            }
+        }, 1000)
         // Call API to get all table
         val service = RetrofitClient.retrofit.create(TableService::class.java)
         val getAllTablesRequest = service.getAllTables()
@@ -144,17 +151,25 @@ class TableListFragment : Fragment() {
         })
 
 
-
-        // Socket
-        Timer().schedule(object: TimerTask() {
-            override fun run() {
-                mSocket.connect()
-            }
-        }, 1000)
-
-        mSocket.on("bill_done_pv") { args ->
+        mSocket.on("connect") { args ->
+            Log.d("SOCKETT1", "connected")
+        }
+        mSocket.on("disconnect") { args ->
+            Log.d("SOCKETT1", "disconnected")
+        }
+        mSocket.on("bill_done_pv_tl") { args ->
             if (args[0] != null) {
-                getAllTablesRequest.clone().enqueue(object : Callback<GetAllTableResponse> {
+                val khuvuc = spn_khuvuc.selectedItem.toString()
+                val socho = spn_loaiban.selectedItem.toString()
+                var trangthai = "tatca"
+                when(rg_trangthai.checkedRadioButtonId) {
+                    binding.btnDangphucvu.id -> trangthai = "dangphucvu"
+                    binding.btnBantrong.id -> trangthai = "trong"
+                }
+                val filterTableRequest = service.filterTables(TableFilterRequest(
+                    khuvuc, socho, trangthai
+                ))
+                filterTableRequest.clone().enqueue(object : Callback<GetAllTableResponse> {
                     override fun onResponse(
                         call: Call<GetAllTableResponse>,
                         response: Response<GetAllTableResponse>
@@ -164,7 +179,6 @@ class TableListFragment : Fragment() {
                             if (tablelist != null) {
                                 adapter.submitList(tablelist)
                             }
-
                         } else {
                             Toast.makeText(context, response.body()?.message.toString(), Toast.LENGTH_SHORT).show()
                         }
